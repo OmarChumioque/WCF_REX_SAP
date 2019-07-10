@@ -1,0 +1,7 @@
+C:\Users\Adriana\source\repos\REXSAP_WCF\REXSAP_WCF\bin\REXSAP_WCF.dll.config
+C:\Users\Adriana\source\repos\REXSAP_WCF\REXSAP_WCF\bin\REXSAP_WCF.dll
+C:\Users\Adriana\source\repos\REXSAP_WCF\REXSAP_WCF\bin\REXSAP_WCF.pdb
+C:\Users\Adriana\source\repos\REXSAP_WCF\REXSAP_WCF\obj\Release\REXSAP_WCF.csprojAssemblyReference.cache
+C:\Users\Adriana\source\repos\REXSAP_WCF\REXSAP_WCF\obj\Release\REXSAP_WCF.csproj.CoreCompileInputs.cache
+C:\Users\Adriana\source\repos\REXSAP_WCF\REXSAP_WCF\obj\Release\REXSAP_WCF.dll
+C:\Users\Adriana\source\repos\REXSAP_WCF\REXSAP_WCF\obj\Release\REXSAP_WCF.pdb
