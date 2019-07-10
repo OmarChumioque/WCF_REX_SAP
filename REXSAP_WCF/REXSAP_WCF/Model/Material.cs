@@ -14,10 +14,10 @@ namespace REXSAP_WCF.Model
         private string codMaterial;
         private string nombre;
         private string unidadConsumo;
-        private decimal factorConversion;
+        private string factorConversion;
         private string estado;
         private string unidadVenta;
-        private decimal factorConversionVenta;
+        private string factorConversionVenta;
 
         [DataMember(Name = "MATNR")]
         public string CodMaterial { get => codMaterial; set => codMaterial = value; }
@@ -26,13 +26,13 @@ namespace REXSAP_WCF.Model
         [DataMember(Name = "MEINS")]
         public string UnidadConsumo { get => unidadConsumo; set => unidadConsumo = value; }
         [DataMember(Name = "BASE")]
-        public decimal FactorConversion { get => factorConversion; set => factorConversion = value; }
+        public string FactorConversion { get => factorConversion; set => factorConversion = value; }
         [DataMember(Name = "MSTAE")]
         public string Estado { get => estado; set => estado = value; }
         [DataMember(Name = "FORMT")]
         public string UnidadVenta { get => unidadVenta; set => unidadVenta = value; }
         [DataMember(Name = "UMREX")]
-        public decimal FactorConversionVenta { get => factorConversionVenta; set => factorConversionVenta = value; }
+        public string FactorConversionVenta { get => factorConversionVenta; set => factorConversionVenta = value; }
     }
 
 }
