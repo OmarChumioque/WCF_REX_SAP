@@ -1,0 +1,32 @@
+**** Trace file opened at 2019-07-04 15:30:40-05:00 (Hora est. Pacífico, Sudamérica)
+	SAP .NET Connector: 3, 0, 1, 0, Working directory: D:\testinRFC\RFConsumer\RFConsumer\bin\Debug, Program: D:\testinRFC\RFConsumer\RFConsumer\bin\Debug\RFConsumer.exe
+	Hardware: PC with Windows NT, Processor: 4x AMD64 Level 6 (Mod 78 Step 3), Operating system: Microsoft Windows NT 6.2.9200.0, .NET CLR version: 4.0.30319.42000
+ 	SAP release: 720, Kernel release: 720, Kernel patch level: 78
+	Hostname: GWYLIM-SIS11, IP address: 192.168.253.145, IP_v6 address: 
+
+	Default trace level: None
+
+>> Error entry 2019-07-04 15:30:40.167
+SAP.Middleware.Connector.RfcTypeConversionException: PARAMETER FEC_INI of FUNCTION ZMMBAPI_DEST_TRANS (SETTER): cannot convert String into DATE ---> SAP.Middleware.Connector.RfcTypeConversionException: Cannot convert 01.01.2016 into DATE (yyyyMMdd) ---> System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.ParseExact(String s, String format, DateTimeFormatInfo dtfi, DateTimeStyles style)
+   en SAP.Middleware.Connector.RfcScalarMetadataDate.ConvertString(String value, Object& currentValue)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en SAP.Middleware.Connector.RfcScalarMetadataDate.ConvertString(String value, Object& currentValue)
+   en SAP.Middleware.Connector.RfcDataContainer`1.SetValue(Int32 index, String value)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en SAP.Middleware.Connector.RfcDataContainer`1.SetValue(Int32 index, String value)
+**** Trace file opened at 2019-07-10 15:06:52-05:00 (Hora est. Pacífico, Sudamérica)
+	SAP .NET Connector: 3, 0, 1, 0, Working directory: C:\Users\Adriana\Documents\Visual Studio 2019\code\testinRFC\RFConsumer\RFConsumer\bin\Debug, Program: C:\Users\Adriana\Documents\Visual Studio 2019\code\testinRFC\RFConsumer\RFConsumer\bin\Debug\RFConsumer.exe
+	Hardware: PC with Windows NT, Processor: 4x AMD64 Level 6 (Mod 42 Step 7), Operating system: Microsoft Windows NT 6.2.9200.0, .NET CLR version: 4.0.30319.42000
+ 	SAP release: 720, Kernel release: 720, Kernel patch level: 78
+	Hostname: DESKTOP-M3VR1N6, IP address: 192.168.253.139, IP_v6 address: 
+
+	Default trace level: None
+
+>> Error entry 2019-07-10 15:06:52.749
+SAP.Middleware.Connector.RfcAbapException
+   en SAP.Middleware.Connector.RfcConnection.ThrowRfcErrorMsg()
+   en SAP.Middleware.Connector.RfcConnection.RfcReceive(RfcFunction function)
+   en SAP.Middleware.Connector.RfcFunction.RfcDeserialize(RfcConnection conn, IRfcIOStream stream)
+   en SAP.Middleware.Connector.RfcFunction.RfcCallReceive(RfcConnection conn, IRfcIOStream stream, RFCID rid)
+   en SAP.Middleware.Connector.RfcFunction.Invoke(RfcDestination destination)
