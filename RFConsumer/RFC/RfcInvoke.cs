@@ -43,8 +43,10 @@ namespace RFC
             RfcDestination rfcDest = RfcDestinationManager.GetDestination(rfc);
 
             RfcRepository rfcRep = rfcDest.Repository;
+            IRfcFunction function = rfcRep.CreateFunction("ZSD_REXSAP_007");
+            //
 
-            IRfcFunction function = rfcRep.CreateFunction("ZSD_REXSAP_003");
+            // IRfcFunction function = rfcRep.CreateFunction("ZSD_REXSAP_003");
 
 
 
