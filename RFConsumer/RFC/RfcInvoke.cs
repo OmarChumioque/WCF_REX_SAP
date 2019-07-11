@@ -41,18 +41,25 @@ namespace RFC
             rfc.Add(RfcConfigParameters.Language, "ES");
             rfc.Add(RfcConfigParameters.PoolSize, "5");
             rfc.Add(RfcConfigParameters.MaxPoolSize, "100");
-            rfc.Add(RfcConfigParameters.IdleTimeout, "600");
+            rfc.Add(RfcConfigParameters.IdleTimeout, "900");
 
 
-            RfcDestination rfcDest = RfcDestinationManager.GetDestination(rfc);
-
-            RfcRepository rfcRep = rfcDest.Repository;
+            RfcDestination rfcDest = null;
+            RfcRepository rfcRep = null;
+            try
+            {
+                rfcDest = RfcDestinationManager.GetDestination(rfc);
+                rfcRep = rfcDest.Repository;
+            }     catch (Exception e) {
+                e.ToString();
+            }
+          //  RfcRepository rfcRep = rfcDest.Repository;
             //  IRfcFunction function = rfcRep.CreateFunction("ZSD_REXSAP_007");
             //
             //
             //   IRfcFunction function = rfcRep.CreateFunction("ZSD_REXSAP_003");
             IRfcFunction function = rfcRep.CreateFunction("ZSD_REXSAP_007");
-
+            
             function.SetValue("I_BUDAT", I_BUDAT);
 
             try
