@@ -17,7 +17,9 @@ namespace RFConsumer
             rfcs.WriteToFile();
 
             */
-            RfcInvoke rfcs = new RfcInvoke("20190710");
+           RfcInvoke rfcs = new RfcInvoke("20190619");
+         //   RfcInvoke rfcs = new RfcInvoke("20190626");
+         //  RfcInvoke rfcs = new RfcInvoke("20190619");
 
             rfcs.WriteToFile();
 
