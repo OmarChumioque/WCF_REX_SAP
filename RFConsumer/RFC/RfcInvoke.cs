@@ -14,19 +14,22 @@ namespace RFC
 
         private string iM_FEC_INI;
         private string iM_FEC_FIN;
+        private string I_BUDAT;
+
+        public RfcInvoke(string I_BUDAT)
+        {
+            this.I_BUDAT = I_BUDAT;
+        }
+
 
         public RfcInvoke(string FEC_INI, string FEC_FIN)
         {
             this.iM_FEC_INI = FEC_INI;
             this.iM_FEC_FIN = FEC_FIN;
-
-
         }
 
         public void WriteToFile()
         {
-
-
             RfcConfigParameters rfc = new RfcConfigParameters();
             rfc.Add(RfcConfigParameters.Name, "Desarrollo");
             rfc.Add(RfcConfigParameters.AppServerHost, "10.16.1.30");
@@ -43,12 +46,15 @@ namespace RFC
             RfcDestination rfcDest = RfcDestinationManager.GetDestination(rfc);
 
             RfcRepository rfcRep = rfcDest.Repository;
-            IRfcFunction function = rfcRep.CreateFunction("ZSD_REXSAP_007");
+            //  IRfcFunction function = rfcRep.CreateFunction("ZSD_REXSAP_007");
+            //
             //
 
-            // IRfcFunction function = rfcRep.CreateFunction("ZSD_REXSAP_003");
 
+            //   IRfcFunction function = rfcRep.CreateFunction("ZSD_REXSAP_003");
+            IRfcFunction function = rfcRep.CreateFunction("ZSD_REXSAP_007");
 
+            function.SetValue("I_BUDAT", I_BUDAT);
 
             try
             {
@@ -60,15 +66,19 @@ namespace RFC
             }
 
 
-          //  IRfcTable dest = function.GetTable("ET_RETURN");
-            IRfcTable doc = function.GetTable("MVENDEDORES");
-            for (int i = 0; i < doc.ElementCount; i++) {
+            //  IRfcTable dest = function.GetTable("ET_RETURN");
+            //  IRfcTable doc = function.GetTable("MVENDEDORES");
+            IRfcTable doc = function.GetTable("MOVALMACEN");
+            foreach (IRfcStructure row in doc) {
+                for (int i = 0; i < doc.ElementCount; i++) {
 
-                RfcElementMetadata metadata = doc.GetElementMetadata(i);
+                     RfcElementMetadata metadata = doc.GetElementMetadata(i);
                
-                Console.Write(metadata.Name.ToString());
+                    Console.Write(metadata.Name+" -> "+row.GetString( metadata.Name)+"\n");
+              }
             }
-            
+
+            Console.ReadLine();
 
         }
     }
