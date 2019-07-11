@@ -1,4 +1,5 @@
-﻿using SAP.Middleware.Connector;
+﻿using RFC.Model;
+using SAP.Middleware.Connector;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -49,8 +50,6 @@ namespace RFC
             //  IRfcFunction function = rfcRep.CreateFunction("ZSD_REXSAP_007");
             //
             //
-
-
             //   IRfcFunction function = rfcRep.CreateFunction("ZSD_REXSAP_003");
             IRfcFunction function = rfcRep.CreateFunction("ZSD_REXSAP_007");
 
@@ -65,21 +64,61 @@ namespace RFC
                 Console.Write(e.ToString());
             }
 
-
-            //  IRfcTable dest = function.GetTable("ET_RETURN");
-            //  IRfcTable doc = function.GetTable("MVENDEDORES");
             IRfcTable doc = function.GetTable("MOVALMACEN");
-            foreach (IRfcStructure row in doc) {
-                for (int i = 0; i < doc.ElementCount; i++) {
 
-                     RfcElementMetadata metadata = doc.GetElementMetadata(i);
-               
-                    Console.Write(metadata.Name+" -> "+row.GetString( metadata.Name)+"\n");
-              }
-            }
-
+            DataTable table = IRfcTable_To_DataTable(doc, "MOVALMACEN");
+            BdConnection bd = new BdConnection();
+            bd.AgregarMovimientosAlmacen(table);
+            
             Console.ReadLine();
 
+        }
+
+        public DataTable IRfcTable_To_DataTable(IRfcTable doc, string tableName) {
+            DataTable table = new DataTable(tableName);
+
+            for (int i = 0; i < doc.ElementCount; i++)
+            {
+                RfcElementMetadata metadata = doc.GetElementMetadata(i);
+                if (metadata.DataType.ToString().Equals("CHAR"))
+                {
+                    table.Columns.Add(metadata.Name, System.Type.GetType("System.String"));
+                }
+                if (metadata.DataType.ToString().Equals("BCD"))
+                {
+                    table.Columns.Add(metadata.Name, System.Type.GetType("System.Decimal"));
+                }
+                if (metadata.DataType.ToString().Equals("DATE"))
+                {
+                    table.Columns.Add(metadata.Name, System.Type.GetType("System.String"));
+                }
+            }
+
+            foreach (IRfcStructure row in doc)
+            {
+                DataRow dr = table.NewRow();
+                for (int i = 0; i < doc.ElementCount; i++)
+                {
+                    RfcElementMetadata metadata = doc.GetElementMetadata(i);
+                    if (metadata.DataType.ToString().Equals("CHAR"))
+                    {
+                      
+                            dr[metadata.Name] = row.GetString(metadata.Name);
+               
+                     
+                    }
+                    if (metadata.DataType.ToString().Equals("BCD"))
+                    {
+                        dr[metadata.Name] = row.GetDecimal(metadata.Name);
+                    }
+                    if (metadata.DataType.ToString().Equals("DATE"))
+                    {
+                        dr[metadata.Name] = row.GetString(metadata.Name);
+                    }
+                }
+                table.Rows.Add(dr);
+            }
+            return table;
         }
     }
 
