@@ -58,11 +58,13 @@ namespace REXSAP_WCF.Services
         public string IngresarVendedores(List<Vendedor> vendedores)
         {
 
+
+
             if (vendedores != null)
                 if (vendedores.Count > 0)
                     bd.RegistrarVendedores(vendedores);
 
-            return "Se ingreso " + vendedores.Count().ToString() + " vendedores";
+            return "Se ingreso  " + vendedores.Count().ToString() + " vendedores";
         }
     }
 }
