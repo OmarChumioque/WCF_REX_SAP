@@ -58,9 +58,9 @@ namespace RFC
             //
             //
             //   IRfcFunction function = rfcRep.CreateFunction("ZSD_REXSAP_003");
-            IRfcFunction function = rfcRep.CreateFunction("ZSD_REXSAP_007");
+            IRfcFunction function = rfcRep.CreateFunction("ZSD_REXSAP_006");
             
-            function.SetValue("I_BUDAT", I_BUDAT);
+            //function.SetValue("I_BUDAT", I_BUDAT);
 
             try
             {
@@ -71,12 +71,12 @@ namespace RFC
                 Console.Write(e.ToString());
             }
 
-            IRfcTable doc = function.GetTable("MOVALMACEN");
-
+            IRfcTable doc = function.GetTable("MSTOCKS");
+            /*
             DataTable table = IRfcTable_To_DataTable(doc, "MOVALMACEN");
             BdConnection bd = new BdConnection();
             bd.AgregarMovimientosAlmacen(table);
-            
+            */
             Console.ReadLine();
 
         }

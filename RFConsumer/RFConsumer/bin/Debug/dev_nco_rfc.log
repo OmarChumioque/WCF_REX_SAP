@@ -829,3 +829,21 @@ SAP.Middleware.Connector.RfcAbapException
    en SAP.Middleware.Connector.RfcFunction.RfcDeserialize(RfcConnection conn, IRfcIOStream stream)
    en SAP.Middleware.Connector.RfcFunction.RfcCallReceive(RfcConnection conn, IRfcIOStream stream, RFCID rid)
    en SAP.Middleware.Connector.RfcFunction.Invoke(RfcDestination destination)
+**** Trace file opened at 2019-07-11 19:44:22-05:00 (Hora est. Pacífico, Sudamérica)
+	SAP .NET Connector: 3, 0, 1, 0, Working directory: C:\Users\usr_saprex\Documents\Visual Studio 2019\Proyectos\WCF_REX_SAP\RFConsumer\RFConsumer\bin\Debug, Program: C:\Users\usr_saprex\Documents\Visual Studio 2019\Proyectos\WCF_REX_SAP\RFConsumer\RFConsumer\bin\Debug\RFConsumer.exe
+	Hardware: PC with Windows NT, Processor: 8x AMD64 Level 6 (Mod 58 Step 0), Operating system: Microsoft Windows NT 6.2.9200.0, .NET CLR version: 4.0.30319.42000
+ 	SAP release: 720, Kernel release: 720, Kernel patch level: 78
+	Hostname: GWYDC-SVR19, IP address: 172.31.236.209, IP_v6 address: 
+
+	Default trace level: None
+
+>> Error entry 2019-07-11 19:44:22.563
+SAP.Middleware.Connector.RfcAbapMessageException: La clave de aprovisionamiento especial '40' no está definido en centro AYLL
+   en SAP.Middleware.Connector.RfcConnection.ThrowRfcErrorMsg()
+   en SAP.Middleware.Connector.RfcConnection.ReadBytes(Byte* buffer, Int32 count)
+   en SAP.Middleware.Connector.RfcConnection.ReadRfcIDBegin(Int32& length)
+   en SAP.Middleware.Connector.RfcConnection.ReadUpTo(RFCGET readState, RfcFunction function, RFCID toRid)
+   en SAP.Middleware.Connector.RfcConnection.RfcReceive(RfcFunction function)
+   en SAP.Middleware.Connector.RfcFunction.RfcDeserialize(RfcConnection conn, IRfcIOStream stream)
+   en SAP.Middleware.Connector.RfcFunction.RfcCallReceive(RfcConnection conn, IRfcIOStream stream, RFCID rid)
+   en SAP.Middleware.Connector.RfcFunction.Invoke(RfcDestination destination)
