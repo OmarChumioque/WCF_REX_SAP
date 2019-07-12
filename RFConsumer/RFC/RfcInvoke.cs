@@ -75,6 +75,8 @@ namespace RFC
 
             if (guardar)
             {
+               
+     //           IRfcTable doc = function.GetTable("MSTOCKS");
                 IRfcTable doc = function.GetTable("MOVALMACEN");
                 DataTable table = IRfcTable_To_DataTable(doc, "MOVALMACEN");
                 BdConnection bd = new BdConnection();
