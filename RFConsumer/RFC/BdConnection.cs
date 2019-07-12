@@ -45,7 +45,13 @@ namespace RFC
                     bulk.ColumnMappings.Add("TIP", "TIP");
                     bulk.WriteToServer(dt);
 
+
+
+                    SqlCommand stored = new SqlCommand("Pintmovalmacen",conn);
+                    stored.CommandType = CommandType.StoredProcedure;
+                    stored.ExecuteNonQuery();
                 }
+
             }
             catch (Exception e)
             {
