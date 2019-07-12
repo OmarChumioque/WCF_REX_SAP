@@ -60,9 +60,9 @@ namespace RFC
             //
             //
             //   IRfcFunction function = rfcRep.CreateFunction("ZSD_REXSAP_003");
-            IRfcFunction function = rfcRep.CreateFunction("ZSD_REXSAP_007");
+            IRfcFunction function = rfcRep.CreateFunction("ZSD_REXSAP_006");
             
-            function.SetValue("I_BUDAT", I_BUDAT);
+           //function.SetValue("I_BUDAT", I_BUDAT);
             try
             {
                 function.Invoke(rfcDest);
