@@ -18,8 +18,9 @@ namespace REXSAP_WCF.BdConnect
                 "Initial Catalog=Rex;" +
                 "User Id=omarch1409;Password=1409Chumioque;" +
                 "connect timeout=2000;");
-                
              */
+
+
             conn = new SqlConnection("Data Source=172.31.236.221;" +
                "Initial Catalog=rex;" +
                "User Id=rexdb;Password=rexdb2019;" +
@@ -32,6 +33,7 @@ namespace REXSAP_WCF.BdConnect
             try
             {
                 conn.Open();
+
                 for (int i = 0; i < clientes.Count; i++)
                 {
                     Cliente it = clientes[i];
@@ -58,7 +60,6 @@ namespace REXSAP_WCF.BdConnect
                     int a = cmd.ExecuteNonQuery();
                     a.ToString();
                 }
-
             }
             catch (Exception e)
             {
@@ -94,8 +95,6 @@ namespace REXSAP_WCF.BdConnect
                     conn.Close();
                 }
             }
-
-
         }
 
         public void RegistrarMateriales(List<Material> materiales) {
