@@ -28,22 +28,25 @@ namespace RFC
                 conn.Open();
 
 
-                SqlCommand cmd = new SqlCommand("delete DocSap", conn);
+                SqlCommand cmd = new SqlCommand("delete DocSapStock", conn);
                 cmd.ExecuteNonQuery();
                 if (conn.State == System.Data.ConnectionState.Open)
                 {
                     SqlBulkCopy bulk = new SqlBulkCopy(conn);
-                    bulk.DestinationTableName = "DocSap";
-                    bulk.ColumnMappings.Add("DOCEJEM", "DOCEJEM");
-                    bulk.ColumnMappings.Add("BWART", "BWART");
+                    bulk.DestinationTableName = "DocSapStock";
                     bulk.ColumnMappings.Add("WERKS", "WERKS");
                     bulk.ColumnMappings.Add("LGORT", "LGORT");
                     bulk.ColumnMappings.Add("MATNR", "MATNR");
-                    bulk.ColumnMappings.Add("VKUML", "LABST");
+                    bulk.ColumnMappings.Add("VKUML", "VKUML");
                     bulk.ColumnMappings.Add("MEINS", "MEINS");
-                    bulk.ColumnMappings.Add("ZDATE", "DATE");
-                    bulk.ColumnMappings.Add("TIP", "TIP");
+                    bulk.ColumnMappings.Add("ZDATE", "ZDATE");
                     bulk.WriteToServer(dt);
+
+
+                    SqlCommand stored = new SqlCommand("pIntmovalmacenstock", conn);
+                    stored.CommandType = CommandType.StoredProcedure;
+                    stored.ExecuteNonQuery();
+
 
                 }
             }
