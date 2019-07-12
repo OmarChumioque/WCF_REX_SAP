@@ -56,8 +56,10 @@ namespace RFC
             catch (Exception e)
             {
                 e.ToString();
+
             }
             finally {
+
                 if (conn.State == ConnectionState.Open) {
                     conn.Close();
                 }
