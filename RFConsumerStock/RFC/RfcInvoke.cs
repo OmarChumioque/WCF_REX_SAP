@@ -80,7 +80,7 @@ namespace RFC
             
          
            //  BdConnection bd = new BdConnection();
-           //   bd.AgregarMovimientosAlmacen(table);
+           //   bd.RecibirStock(table);
 
        
 

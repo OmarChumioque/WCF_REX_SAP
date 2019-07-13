@@ -22,7 +22,7 @@ namespace RFC
 
         }
 
-        public void AgregarMovimientosAlmacen(DataTable dt)
+        public void RecibirStock(DataTable dt)
         {
             try
             {
