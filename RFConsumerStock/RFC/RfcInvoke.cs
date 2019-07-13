@@ -29,10 +29,10 @@ namespace RFC
             this.iM_FEC_FIN = FEC_FIN;
         }
 
-        public void WriteToFile()
+        public DataTable ObtenerStock()
         {
+            DataTable dt = new DataTable("");
 
-            bool guardar = true;
             RfcConfigParameters rfc = new RfcConfigParameters();
             rfc.Add(RfcConfigParameters.Name, "Desarrollo");
             rfc.Add(RfcConfigParameters.AppServerHost, "10.16.1.30");
@@ -66,25 +66,28 @@ namespace RFC
             try
             {
                 function.Invoke(rfcDest);
+                IRfcTable doc = function.GetTable("MSTOCKS");
+                DataTable table = IRfcTable_To_DataTable(doc, "MSTOCKS");
+                dt = table;
+
+                return dt;
             }
             catch (RfcBaseException e)
             {
-                guardar = false;
-                Console.Write(e.ToString());
+                return null;
             }
 
-            if (guardar)
-            {
-                IRfcTable doc = function.GetTable("MSTOCKS");
+            
+         
+           //  BdConnection bd = new BdConnection();
+           //   bd.AgregarMovimientosAlmacen(table);
 
-                DataTable table = IRfcTable_To_DataTable(doc, "MSTOCKS");
-                BdConnection bd = new BdConnection();
-                bd.AgregarMovimientosAlmacen(table);
-            }
-            Console.ReadLine();
+       
+
+            
         }
 
-        public DataTable IRfcTable_To_DataTable(IRfcTable doc, string tableName) {
+        private  DataTable IRfcTable_To_DataTable(IRfcTable doc, string tableName) {
             DataTable table = new DataTable(tableName);
 
             for (int i = 0; i < doc.ElementCount; i++)

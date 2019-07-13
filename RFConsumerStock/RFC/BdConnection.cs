@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace RFC
 {
-    class BdConnection
+    public class BdConnection
     {
         SqlConnection conn;
 
@@ -19,9 +19,6 @@ namespace RFC
                "Initial Catalog=rex;" +
                "User Id=rexdb;Password=rexdb2019;" +
                "connect timeout=2000;");
-
-
-
 
         }
 
