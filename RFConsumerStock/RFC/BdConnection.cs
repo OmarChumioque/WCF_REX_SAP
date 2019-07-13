@@ -19,6 +19,7 @@ namespace RFC
                "User Id=rexdb;Password=rexdb2019;" +
                "connect timeout=2000;");
 
+
         }
 
         public void AgregarMovimientosAlmacen(DataTable dt)
