@@ -60,9 +60,9 @@ namespace RFC
             IRfcFunction function = rfcDest.Repository.CreateFunction("ZSD_REXSAP_008");
             IRfcTable doc = function.GetTable("M_PEDIDOS");
             //     doc.Insert();
-            doc.Insert(pedidos.Count);
+            doc.Insert(pedidos.Count());
            
-            for (int i = 0; i < pedidos.Count; i++)
+            for (int i = 0; i <pedidos.Count(); i++)
             {
                 doc.CurrentIndex = i;
                 doc.SetValue("BSTKD", pedidos[i].Bstkd);
@@ -71,14 +71,15 @@ namespace RFC
                 doc.SetValue("ZTERM", pedidos[i].Zterm);
                 doc.SetValue("AUART", pedidos[i].Auart);
                 doc.SetValue("WAERK", pedidos[i].Waerk);
-                doc.SetValue("NETWR", pedidos[i].Netwr);//DECIMAL
+                doc.SetValue("NETWR",Math.Round( pedidos[i].Netwr,2));//DECIMAL
                 doc.SetValue("MATNR", pedidos[i].Matnr);
                 doc.SetValue("KWMENG", pedidos[i].Kwmeng);//DECIMAL
                 doc.SetValue("KBETR",Math.Round(pedidos[i].Kbetr,2));//DECIMAL
-                doc.SetValue("NETPR",Math.Round(pedidos[i].Netpr,2));//DECIMAL
                 doc.SetValue("PSTYV", pedidos[i].Pstyv);
+                doc.SetValue("NETPR", Math.Round(pedidos[i].Netpr, 2));//DECIMAL
                 doc.SetValue("VBELN", pedidos[i].Vbeln);
-               
+                doc.SetValue("KETDAT", "2019-07-13");
+
             }
             try {
           
