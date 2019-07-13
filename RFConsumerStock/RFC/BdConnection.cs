@@ -14,10 +14,13 @@ namespace RFC
 
         public BdConnection() {
 
+
             conn = new SqlConnection("Data Source=172.31.236.221;" +
                "Initial Catalog=rex;" +
                "User Id=rexdb;Password=rexdb2019;" +
                "connect timeout=2000;");
+
+
 
 
         }
@@ -33,6 +36,8 @@ namespace RFC
                 cmd.ExecuteNonQuery();
                 if (conn.State == System.Data.ConnectionState.Open)
                 {
+
+
                     SqlBulkCopy bulk = new SqlBulkCopy(conn);
                     bulk.DestinationTableName = "DocSapStock";
                     bulk.ColumnMappings.Add("WERKS", "WERKS");
