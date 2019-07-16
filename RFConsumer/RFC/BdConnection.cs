@@ -44,9 +44,6 @@ namespace RFC
                     bulk.ColumnMappings.Add("ZDATE", "DATE");
                     bulk.ColumnMappings.Add("TIP", "TIP");
                     bulk.WriteToServer(dt);
-
-
-
                     SqlCommand stored = new SqlCommand("Pintmovalmacen",conn);
                     stored.CommandType = CommandType.StoredProcedure;
                     stored.ExecuteNonQuery();
