@@ -36,3 +36,13 @@ C:\Users\Adriana\Documents\Proyectos\Github\WCF_REX_SAP\RFConsumer\RFC\obj\Debug
 C:\Users\Adriana\Documents\Proyectos\Github\WCF_REX_SAP\RFConsumer\RFC\obj\Debug\RFC.csproj.CopyComplete
 C:\Users\Adriana\Documents\Proyectos\Github\WCF_REX_SAP\RFConsumer\RFC\obj\Debug\RFC.dll
 C:\Users\Adriana\Documents\Proyectos\Github\WCF_REX_SAP\RFConsumer\RFC\obj\Debug\RFC.pdb
+C:\Users\usr_saprex\Documents\Visual Studio 2019\Proyectos\WCF_REX_SAP\RFConsumer\RFC\bin\Debug\RFC.dll.config
+C:\Users\usr_saprex\Documents\Visual Studio 2019\Proyectos\WCF_REX_SAP\RFConsumer\RFC\bin\Debug\RFC.dll
+C:\Users\usr_saprex\Documents\Visual Studio 2019\Proyectos\WCF_REX_SAP\RFConsumer\RFC\bin\Debug\RFC.pdb
+C:\Users\usr_saprex\Documents\Visual Studio 2019\Proyectos\WCF_REX_SAP\RFConsumer\RFC\bin\Debug\sapnco.dll
+C:\Users\usr_saprex\Documents\Visual Studio 2019\Proyectos\WCF_REX_SAP\RFConsumer\RFC\bin\Debug\sapnco_utils.dll
+C:\Users\usr_saprex\Documents\Visual Studio 2019\Proyectos\WCF_REX_SAP\RFConsumer\RFC\obj\Debug\RFC.csprojAssemblyReference.cache
+C:\Users\usr_saprex\Documents\Visual Studio 2019\Proyectos\WCF_REX_SAP\RFConsumer\RFC\obj\Debug\RFC.csproj.CoreCompileInputs.cache
+C:\Users\usr_saprex\Documents\Visual Studio 2019\Proyectos\WCF_REX_SAP\RFConsumer\RFC\obj\Debug\RFC.csproj.CopyComplete
+C:\Users\usr_saprex\Documents\Visual Studio 2019\Proyectos\WCF_REX_SAP\RFConsumer\RFC\obj\Debug\RFC.dll
+C:\Users\usr_saprex\Documents\Visual Studio 2019\Proyectos\WCF_REX_SAP\RFConsumer\RFC\obj\Debug\RFC.pdb

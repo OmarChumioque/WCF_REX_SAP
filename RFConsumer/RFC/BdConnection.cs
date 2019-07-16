@@ -14,9 +14,10 @@ namespace RFC
 
         public BdConnection() {
 
-            conn = new SqlConnection("Data Source=172.31.236.221;" +
-               "Initial Catalog=rex;"+"User Id=rexdb;Password=rexdb2019;" +
-               "connect timeout=2000;");
+            conn = new SqlConnection("Data Source=185.144.157.97;" +
+                "Initial Catalog=Rex;" +
+                "User Id=omarch1409;Password=1409Chumioque;" +
+                "connect timeout=2000;");
 
         }
 
@@ -25,6 +26,8 @@ namespace RFC
             try
             {
                 conn.Open();
+
+
                 SqlCommand cmd = new SqlCommand("delete DocSap", conn);
                 cmd.ExecuteNonQuery();
                 if (conn.State == System.Data.ConnectionState.Open)
@@ -50,15 +53,11 @@ namespace RFC
             catch (Exception e)
             {
                 e.ToString();
-
             }
             finally {
-
                 if (conn.State == ConnectionState.Open) {
                     conn.Close();
                 }
-
-                    
             }
 
 

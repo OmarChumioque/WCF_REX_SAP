@@ -12,3 +12,10 @@ C:\Users\Adriana\Documents\Proyectos\Github\WCF_REX_SAP\REXSAP_WCF\REXSAP_WCF\ob
 C:\Users\Adriana\Documents\Proyectos\Github\WCF_REX_SAP\REXSAP_WCF\REXSAP_WCF\obj\Debug\REXSAP_WCF.csproj.CoreCompileInputs.cache
 C:\Users\Adriana\Documents\Proyectos\Github\WCF_REX_SAP\REXSAP_WCF\REXSAP_WCF\obj\Debug\REXSAP_WCF.dll
 C:\Users\Adriana\Documents\Proyectos\Github\WCF_REX_SAP\REXSAP_WCF\REXSAP_WCF\obj\Debug\REXSAP_WCF.pdb
+C:\Users\usr_saprex\Documents\Visual Studio 2019\Proyectos\WCF_REX_SAP\REXSAP_WCF\REXSAP_WCF\bin\REXSAP_WCF.dll.config
+C:\Users\usr_saprex\Documents\Visual Studio 2019\Proyectos\WCF_REX_SAP\REXSAP_WCF\REXSAP_WCF\bin\REXSAP_WCF.dll
+C:\Users\usr_saprex\Documents\Visual Studio 2019\Proyectos\WCF_REX_SAP\REXSAP_WCF\REXSAP_WCF\bin\REXSAP_WCF.pdb
+C:\Users\usr_saprex\Documents\Visual Studio 2019\Proyectos\WCF_REX_SAP\REXSAP_WCF\REXSAP_WCF\obj\Debug\REXSAP_WCF.csprojAssemblyReference.cache
+C:\Users\usr_saprex\Documents\Visual Studio 2019\Proyectos\WCF_REX_SAP\REXSAP_WCF\REXSAP_WCF\obj\Debug\REXSAP_WCF.csproj.CoreCompileInputs.cache
+C:\Users\usr_saprex\Documents\Visual Studio 2019\Proyectos\WCF_REX_SAP\REXSAP_WCF\REXSAP_WCF\obj\Debug\REXSAP_WCF.dll
+C:\Users\usr_saprex\Documents\Visual Studio 2019\Proyectos\WCF_REX_SAP\REXSAP_WCF\REXSAP_WCF\obj\Debug\REXSAP_WCF.pdb
