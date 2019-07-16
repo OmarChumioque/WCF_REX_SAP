@@ -46,7 +46,7 @@ namespace RFC
             rfc.Add(RfcConfigParameters.MaxPoolSize, "100");
             rfc.Add(RfcConfigParameters.IdleTimeout, "900");
             RfcDestination rfcDest = null;
-            RfcRepository rfcRep = null;
+         
 
             try
             {
@@ -58,12 +58,12 @@ namespace RFC
             }
 
             IRfcFunction function = rfcDest.Repository.CreateFunction("ZSD_REXSAP_009");
-         
+            RfcRepository rfcRep = null;
             try
             {
                 function.Invoke(rfcDest);
-                IRfcTable doc = function.GetTable("M_PEDIDOS");
-                DataTable table = IRfcTable_To_DataTable(doc, "MOVALMACEN");
+                IRfcTable doc = function.GetTable("IT_DOCSAPREX");
+                DataTable table = IRfcTable_To_DataTable(doc, "IT_DOCSAPREX");
                 return table;
             }
             catch (RfcBaseException e)
@@ -79,25 +79,34 @@ namespace RFC
         private  DataTable IRfcTable_To_DataTable(IRfcTable doc, string tableName) {
             DataTable table = new DataTable(tableName);
 
-            for (int i = 0; i < doc.ElementCount; i++)
-            {
-                RfcElementMetadata metadata = doc.GetElementMetadata(i);
-                if (metadata.DataType.ToString().Equals("CHAR"))
+                for (int i = 0; i < doc.ElementCount; i++)
                 {
-                    table.Columns.Add(metadata.Name, System.Type.GetType("System.String"));
-                }
-                if (metadata.DataType.ToString().Equals("BCD"))
-                {
-                    table.Columns.Add(metadata.Name, System.Type.GetType("System.Decimal"));
-                }
-                if (metadata.DataType.ToString().Equals("DATE"))
-                {
-                    table.Columns.Add(metadata.Name, System.Type.GetType("System.String"));
-                }
-            }
+                    RfcElementMetadata metadata = doc.GetElementMetadata(i);
+                    if (metadata.DataType.ToString().Equals("CHAR"))
+                    {
+                        table.Columns.Add(metadata.Name, System.Type.GetType("System.String"));
+                    }
+                    else if (metadata.DataType.ToString().Equals("BCD"))
+                    {
+                        table.Columns.Add(metadata.Name, System.Type.GetType("System.Decimal"));
+                    }
+                    else if (metadata.DataType.ToString().Equals("DATE"))
+                    {
+                        table.Columns.Add(metadata.Name, System.Type.GetType("System.String"));
+                    }
+                    else if (metadata.DataType.ToString().Equals("TIME"))
+                    {
+                        table.Columns.Add(metadata.Name, System.Type.GetType("System.String"));
 
-            foreach (IRfcStructure row in doc)
-            {
+                    }
+                    else if (metadata.DataType.ToString().Equals("NUM"))
+                    {
+                        table.Columns.Add(metadata.Name, System.Type.GetType("System.Int32"));
+
+                    }
+                }
+                foreach (IRfcStructure row in doc)
+                {
                 DataRow dr = table.NewRow();
                 for (int i = 0; i < doc.ElementCount; i++)
                 {
@@ -108,13 +117,23 @@ namespace RFC
                           dr[metadata.Name] = row.GetString(metadata.Name);
                                    
                     }
-                    if (metadata.DataType.ToString().Equals("BCD"))
+                    else if (metadata.DataType.ToString().Equals("BCD"))
                     {
                         dr[metadata.Name] = row.GetDecimal(metadata.Name);
                     }
-                    if (metadata.DataType.ToString().Equals("DATE"))
+                    else if (metadata.DataType.ToString().Equals("DATE"))
                     {
                         dr[metadata.Name] = row.GetString(metadata.Name);
+                    }
+                    else if (metadata.DataType.ToString().Equals("TIME"))
+                    {
+                        dr[metadata.Name] = row.GetString(metadata.Name);
+
+                    }
+                    else if (metadata.DataType.ToString().Equals("NUM"))
+                    {
+                        dr[metadata.Name] = row.GetInt(metadata.Name);
+
                     }
                 }
                 table.Rows.Add(dr);
