@@ -8,20 +8,21 @@ using System.Threading.Tasks;
 
 namespace RFC
 {
-    class BdConnection
+    public class BdConnection
     {
         SqlConnection conn;
 
         public BdConnection() {
 
-            conn = new SqlConnection("Data Source=185.144.157.97;" +
-                "Initial Catalog=Rex;" +
-                "User Id=omarch1409;Password=1409Chumioque;" +
-                "connect timeout=2000;");
+
+            conn = new SqlConnection("Data Source=172.31.236.221;" +
+               "Initial Catalog=rex;" +
+               "User Id=rexdb;Password=rexdb2019;" +
+               "connect timeout=2000;");
 
         }
 
-        public void AgregarMovimientosAlmacen(DataTable dt)
+        public void RecibirStock(DataTable dt)
         {
             try
             {
@@ -32,6 +33,8 @@ namespace RFC
                 cmd.ExecuteNonQuery();
                 if (conn.State == System.Data.ConnectionState.Open)
                 {
+
+
                     SqlBulkCopy bulk = new SqlBulkCopy(conn);
                     bulk.DestinationTableName = "DocSapStock";
                     bulk.ColumnMappings.Add("WERKS", "WERKS");

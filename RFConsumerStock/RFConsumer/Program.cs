@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Data;
 namespace RFConsumer
 {
     class Program
@@ -15,10 +15,11 @@ namespace RFConsumer
             RfcInvoke rfcs = new RfcInvoke("01.01.2016", "01.07.2019");
             rfcs.WriteToFile();
             */
+           BdConnection bd = new BdConnection();
            RfcInvoke rfcs = new RfcInvoke("20190619");
          
-            rfcs.WriteToFile();
-
+           DataTable dt= rfcs.ObtenerStock();
+           bd.RecibirStock(dt);
         }
 
     }
