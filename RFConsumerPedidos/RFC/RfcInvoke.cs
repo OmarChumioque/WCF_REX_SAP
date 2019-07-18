@@ -88,6 +88,7 @@ namespace RFC
                 DataTable dt2 = IRfcTable_To_DataTable(doc2, "TI_PEDIDOSAP");
                 dt2.Rows.Count.ToString();
 
+                  
 
 
                 return true;
