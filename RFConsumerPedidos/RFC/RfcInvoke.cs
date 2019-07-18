@@ -32,8 +32,7 @@ namespace RFC
 
         public bool IngresarPedidos(List<Pedido> pedidos)
         {
-
-          
+      
             RfcConfigParameters rfc = new RfcConfigParameters();
             rfc.Add(RfcConfigParameters.Name, "Desarrollo");
             rfc.Add(RfcConfigParameters.AppServerHost, "10.16.1.30");
@@ -47,7 +46,6 @@ namespace RFC
             rfc.Add(RfcConfigParameters.IdleTimeout, "900");
             RfcDestination rfcDest = null;
             RfcRepository rfcRep = null;
-
             try
             {
                 rfcDest = RfcDestinationManager.GetDestination(rfc);
@@ -59,6 +57,7 @@ namespace RFC
 
             IRfcFunction function = rfcDest.Repository.CreateFunction("ZSD_REXSAP_008");
             IRfcTable doc = function.GetTable("M_PEDIDOS");
+          
             //     doc.Insert();
             doc.Insert(pedidos.Count());
            
@@ -67,7 +66,7 @@ namespace RFC
                 doc.CurrentIndex = i;
                 doc.SetValue("BSTKD", pedidos[i].Bstkd);
                 doc.SetValue("KUNNR", pedidos[i].Kunnr);
-                doc.SetValue("AUDAT", pedidos[i].Audat);//DATE
+                doc.SetValue("AUDAT", "20190717");//DATE
                 doc.SetValue("ZTERM", pedidos[i].Zterm);
                 doc.SetValue("AUART", pedidos[i].Auart);
                 doc.SetValue("WAERK", pedidos[i].Waerk);
@@ -77,15 +76,22 @@ namespace RFC
                 doc.SetValue("KBETR",Math.Round(pedidos[i].Kbetr,2));//DECIMAL
                 doc.SetValue("PSTYV", pedidos[i].Pstyv);
                 doc.SetValue("NETPR", Math.Round(pedidos[i].Netpr, 2));//DECIMAL
-                doc.SetValue("VBELN", pedidos[i].Vbeln);
-                doc.SetValue("KETDAT", "2019-07-13");
+                //   doc.SetValue("VBELN", pedidos[i].Vbeln);
+                doc.SetValue("KETDAT", "20190717");
 
             }
             try {
-          
+            
                 function.Invoke(rfcDest);
+               
+                IRfcTable doc2 = function.GetTable("TI_PEDIDOSAP");
+                DataTable dt2 = IRfcTable_To_DataTable(doc2, "TI_PEDIDOSSAP");
+                dt2.Rows.Count.ToString();
+
+
                 return true;
             } catch (Exception e) {
+                e.ToString();
                 return false;
             }
           
