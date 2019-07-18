@@ -85,8 +85,9 @@ namespace RFC
                 function.Invoke(rfcDest);
                
                 IRfcTable doc2 = function.GetTable("TI_PEDIDOSAP");
-                DataTable dt2 = IRfcTable_To_DataTable(doc2, "TI_PEDIDOSSAP");
+                DataTable dt2 = IRfcTable_To_DataTable(doc2, "TI_PEDIDOSAP");
                 dt2.Rows.Count.ToString();
+
 
 
                 return true;
