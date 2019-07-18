@@ -14,11 +14,16 @@ namespace RFC
         SqlConnection conn;
 
         public BdConnection() {
+            /*
+                        conn = new SqlConnection("Data Source=172.31.236.221;" +
+                           "Initial Catalog=rex;" +
+                           "User Id=rexdb;Password=rexdb2019;" +
+                           "connect timeout=2000;");*/
 
-            conn = new SqlConnection("Data Source=172.31.236.221;" +
-               "Initial Catalog=rex;" +
-               "User Id=rexdb;Password=rexdb2019;" +
-               "connect timeout=2000;");
+            conn = new SqlConnection("Data Source=185.144.157.97;" +
+         "Initial Catalog=rex;" +
+         "User Id=omarch1409;Password=1409Chumioque;" +
+         "connect timeout=2000;");
         }
 
         public List<Pedido> ObtenerPedidos() {
@@ -62,6 +67,7 @@ namespace RFC
             }
 
             return list;
+
         }
 
         public void AgregarMovimientosAlmacen(DataTable dt)
