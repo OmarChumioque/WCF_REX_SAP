@@ -235,6 +235,10 @@ namespace REXSAP_WCF.BdConnect
                     Material it = materiales[i];
                     if (it != null)
                     {
+                        //reglas de mapeo; Ciro Palomino Almanza; 20190719
+                        //1.- Si la unidad de venta es igual a la unidad de consumo que es la unidad base de SAP
+                        if (it.UnidadVenta == null) it.UnidadVenta = it.UnidadConsumo;
+
                         cmd = new SqlCommand("pWSarticulos", conn);// Procedimiento ingresa o actualiza Material recibido
                         cmd.CommandType = System.Data.CommandType.StoredProcedure;
                         cmd.Parameters.Add(new SqlParameter("@carticulos_id", it.CodMaterial));
