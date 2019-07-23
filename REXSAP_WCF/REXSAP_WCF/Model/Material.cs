@@ -18,6 +18,7 @@ namespace REXSAP_WCF.Model
         private string estado;
         private string unidadVenta;
         private string factorConversionVenta;
+        private string cCategoria_2;
 
         [DataMember(Name = "MATNR")]
         public string CodMaterial { get => codMaterial; set => codMaterial = value; }
@@ -33,6 +34,9 @@ namespace REXSAP_WCF.Model
         public string UnidadVenta { get => unidadVenta; set => unidadVenta = value; }
         [DataMember(Name = "UMREX")]
         public string FactorConversionVenta { get => factorConversionVenta; set => factorConversionVenta = value; }
+
+        [DataMember(Name = "MVGR1")]
+        public string CCategoria_2 { get => cCategoria_2; set => cCategoria_2 = value; }
     }
 
 }

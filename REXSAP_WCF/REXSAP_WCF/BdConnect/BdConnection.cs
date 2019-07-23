@@ -73,7 +73,7 @@ namespace REXSAP_WCF.BdConnect
                         cmd.Parameters.Add(new SqlParameter("@cubigeo_clie", it.CodUbigeo));
                     }
                     else {
-                        cmd.Parameters.Add(new SqlParameter("@cubigeo_clie",""));
+                        cmd.Parameters.Add(new SqlParameter("@cubigeo_clie", "999999"));
                     }
                     if (it.CodVendedor != null)
                     {
@@ -248,6 +248,7 @@ namespace REXSAP_WCF.BdConnect
                         cmd.Parameters.Add(new SqlParameter("@carticulos_estado", it.Estado));
                         cmd.Parameters.Add(new SqlParameter("@cunidad_de_medida_venta", it.UnidadVenta));
                         cmd.Parameters.Add(new SqlParameter("@nfactor_a_venta", it.FactorConversionVenta));
+                        cmd.Parameters.Add(new SqlParameter("@ccategoria_2", it.CCategoria_2));
                         cmd.ExecuteNonQuery();
                     }
                 }
