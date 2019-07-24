@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="RFConsumer.exe" version="1.0.0.8" publicKeyToken="2d1c742403fea887" language="neutral" processorArchitecture="amd64" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="RFConsumer" version="1.0.0.0" language="neutral" processorArchitecture="amd64" />
+    <commandLine file="RFConsumer.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          Opciones del manifiesto de UAC
+          Si desea cambiar el nivel de Control de cuentas de usuario de Windows, reemplace el
+          nodo requestedExecutionLevel por uno de los siguientes.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         Si desea usar Virtualización de archivos y Registro para compatibilidad con
+         versiones anteriores, elimine el nodo requestedExecutionLevel.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RFC.dll" size="18944">
+      <assemblyIdentity name="RFC" version="3.0.16.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>/oYzw2lyvIXOv7IG8NhJLeJQO3mi+G/hPYLt+l/viG8=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RFConsumer.exe" size="5104">
+      <assemblyIdentity name="RFConsumer" version="1.0.0.0" language="neutral" processorArchitecture="amd64" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>087I+1HejQhBNmqsG4AT/oIRrCgd+N6QHHiiuWcaKos=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="sapnco.dll" size="360448">
+      <assemblyIdentity name="sapnco" version="3.0.0.42" publicKeyToken="50436DCA5C7F7D23" language="neutral" processorArchitecture="amd64" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>e+IwBeqPHlu0mGEmuPZxvE8xFZkOV79DJcstqqnGRTE=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="sapnco_utils.dll" size="4908032">
+      <assemblyIdentity name="sapnco_utils" version="3.0.0.42" publicKeyToken="50436DCA5C7F7D23" language="neutral" processorArchitecture="amd64" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>UN3LdE18Jmzl9lAx0kIE4f6DJmyk94+YPg6g7+sn1Qw=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="RFConsumer.exe.config" size="187">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>4B99MunNS6a86kdtUwaVjp7ZIlanyup5Dmy86LrOXUM=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=DESKTOP-M3VR1N6\Adriana" issuerKeyHash="c31d2532b8a48a6b933e131023d856d1772523bc" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>fHw3wknR/x29JldlypAbkMAkYKEKvn3Fskl1koRDON0=</DigestValue></Reference></SignedInfo><SignatureValue>V9EFSTeiH+GSbWq4ahUfr8xP5RPd1XQuAni8bBbrmZfhH2qfOxD1+dvlTMm4yI5LOZWbGHW8DAkudRYM9NpndTle8+6uWfyUTqNfHpVGbOepifJ6KKaHeFCekw7IyTAU+t1Nv5vvT6L5Sy69N+vK8C4qZ1zE8BhKfNe3iPnYLBI=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>tGyFsN0vxLuP46Ixid+zlx9Vw/du7eUxt/PSxwV4YUPM3pWbzDqgb7e3BHTIzQgWUeiAVg3DQ1Yf39qoypUlzaK8Y6cKpi3Z2Eyqui3yYHRmNG+93C17Dfjllz25r6HKfxIYjFzo/iw2Z6cPqZnmLXSXOJ6NEmyHDcJJfV4Y2lk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="dd384384927549b2c57dbe0aa16024c0901b90ca655726bd1dffd149c2377c7c" Description="" Url=""><as:assemblyIdentity name="RFConsumer.exe" version="1.0.0.8" publicKeyToken="2d1c742403fea887" language="neutral" processorArchitecture="amd64" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DESKTOP-M3VR1N6\Adriana</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>T70UGza5l1vZZU6jrYcm24X3r9Z5GBNOdNQ80pA+nfw=</DigestValue></Reference></SignedInfo><SignatureValue>OyOGKkf8WrV+sjBHI1jSbSG8O5zOsPTO9uZGvdfmqomFIifLglzUqqyIMAtxtvyCpsCiA0XqFxBeQsX/FJniDKJtR4zKUHuevEnKzHwZhcOILv3DKsWBOSgYgEFM0UOVCwMXDw3Jau2TG/chwq9h7F/UxSuWyoXkKppHDfYDbbw=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>tGyFsN0vxLuP46Ixid+zlx9Vw/du7eUxt/PSxwV4YUPM3pWbzDqgb7e3BHTIzQgWUeiAVg3DQ1Yf39qoypUlzaK8Y6cKpi3Z2Eyqui3yYHRmNG+93C17Dfjllz25r6HKfxIYjFzo/iw2Z6cPqZnmLXSXOJ6NEmyHDcJJfV4Y2lk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB9TCCAV6gAwIBAgIQcSspvCry07tOtwzP1VPgwjANBgkqhkiG9w0BAQsFADA5MTcwNQYDVQQDHi4ARABFAFMASwBUAE8AUAAtAE0AMwBWAFIAMQBOADYAXABBAGQAcgBpAGEAbgBhMB4XDTE5MDcxOTA0Mzk0NloXDTIwMDcxODEwMzk0NlowOTE3MDUGA1UEAx4uAEQARQBTAEsAVABPAFAALQBNADMAVgBSADEATgA2AFwAQQBkAHIAaQBhAG4AYTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAtGyFsN0vxLuP46Ixid+zlx9Vw/du7eUxt/PSxwV4YUPM3pWbzDqgb7e3BHTIzQgWUeiAVg3DQ1Yf39qoypUlzaK8Y6cKpi3Z2Eyqui3yYHRmNG+93C17Dfjllz25r6HKfxIYjFzo/iw2Z6cPqZnmLXSXOJ6NEmyHDcJJfV4Y2lkCAwEAATANBgkqhkiG9w0BAQsFAAOBgQCqZ0q0tHnGzWwTXWrSvNyLp+3pEOYMw07JiaTY3xo5pTHvJj6U83nHazw/LrRpPAnhN72xHiyV31K+fTWr6NoVX/Rp+7T/z0xphgnmaMFpfMl7AC8SS1vEm3IzRJySP56X8i3Sm4t5yPniNbj0Uobob/1Uu3LTWaN6LNCGV9uIOw==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

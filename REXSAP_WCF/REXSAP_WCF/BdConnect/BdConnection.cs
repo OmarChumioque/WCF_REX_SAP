@@ -206,8 +206,23 @@ namespace REXSAP_WCF.BdConnect
                     Transportista it = transportistas[i];
                     cmd = new SqlCommand("pWStransportista", conn);// Procedimiento ingresa o actualiza transportista recibido
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    cmd.Parameters.Add(new SqlParameter("@cproveedor_id",it.IdProveedor));
-                    cmd.Parameters.Add(new SqlParameter("@cproveedor_nombre",it.Nombre));
+
+                    if (it.IdProveedor != null)
+                    {
+                        cmd.Parameters.Add(new SqlParameter("@cproveedor_id", it.IdProveedor));
+                    }
+                    else {
+                        cmd.Parameters.Add(new SqlParameter("@cproveedor_id", ""));
+                    }
+
+                    if (it.Nombre != null)
+                    {
+                        cmd.Parameters.Add(new SqlParameter("@cproveedor_nombre", it.Nombre));
+                    }
+                    else {
+                        cmd.Parameters.Add(new SqlParameter("@cproveedor_nombre", ""));
+                    }
+                   
                     cmd.ExecuteNonQuery();
                 }
             }
@@ -275,7 +290,15 @@ namespace REXSAP_WCF.BdConnect
                     Vendedor it = vendedores[i];
                     cmd = new SqlCommand("pWSvendedor", conn);// Procedimiento ingresa o actualiza Material recibido
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    cmd.Parameters.Add(new SqlParameter("@cid_vend", it.IdVendedor));
+                    if (it.IdVendedor != null)
+                    {
+                        cmd.Parameters.Add(new SqlParameter("@cid_vend", it.IdVendedor));
+                    }
+                    else {
+                        cmd.Parameters.Add(new SqlParameter("@cid_vend",""));
+                    }
+                   
+
                     cmd.Parameters.Add(new SqlParameter("@cnomb_vend", it.Nombre));
                     cmd.ExecuteNonQuery();
                 }

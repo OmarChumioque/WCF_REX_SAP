@@ -992,3 +992,357 @@ SAP.Middleware.Connector.RfcInvalidStateException: TABLE [STRUCTURE ZRSAP_PEDIDO
 >> Error entry 2019-07-13 13:08:30.817
 SAP.Middleware.Connector.RfcInvalidStateException: TABLE [STRUCTURE ZRSAP_PEDIDOS]: cannot set value (array storing element values is null)
    en SAP.Middleware.Connector.RfcDataContainer`1.SetValue(Int32 index, String value)
+**** Trace file opened at 2019-07-16 16:09:47-05:00 (Hora est. Pacífico, Sudamérica)
+	SAP .NET Connector: 3, 0, 1, 0, Working directory: C:\Users\Adriana\Documents\Proyectos\Github\WCF_REX_SAP\RFConsumerPedidos\RFConsumer\bin\Debug, Program: C:\Users\Adriana\Documents\Proyectos\Github\WCF_REX_SAP\RFConsumerPedidos\RFConsumer\bin\Debug\RFConsumer.exe
+	Hardware: PC with Windows NT, Processor: 4x AMD64 Level 6 (Mod 42 Step 7), Operating system: Microsoft Windows NT 6.2.9200.0, .NET CLR version: 4.0.30319.42000
+ 	SAP release: 720, Kernel release: 720, Kernel patch level: 78
+	Hostname: DESKTOP-M3VR1N6, IP address: 192.168.253.142, IP_v6 address: 
+
+	Default trace level: None
+
+>> Error entry 2019-07-16 16:09:47.203
+SAP.Middleware.Connector.RfcAbapRuntimeException: Syntax error in program SAPLZSD_REXSAP                          .
+   en SAP.Middleware.Connector.RfcConnection.ThrowRfcErrorMsg()
+   en SAP.Middleware.Connector.RfcConnection.ReadBytes(Byte* buffer, Int32 count)
+   en SAP.Middleware.Connector.RfcConnection.ReadRfcIDBegin(Int32& length)
+   en SAP.Middleware.Connector.RfcConnection.ReadUpTo(RFCGET readState, RfcFunction function, RFCID toRid)
+   en SAP.Middleware.Connector.RfcConnection.RfcReceive(RfcFunction function)
+   en SAP.Middleware.Connector.RfcFunction.RfcDeserialize(RfcConnection conn, IRfcIOStream stream)
+   en SAP.Middleware.Connector.RfcFunction.RfcCallReceive(RfcConnection conn, IRfcIOStream stream, RFCID rid)
+   en SAP.Middleware.Connector.RfcFunction.Invoke(RfcDestination destination)
+**** Trace file opened at 2019-07-16 16:14:44-05:00 (Hora est. Pacífico, Sudamérica)
+	SAP .NET Connector: 3, 0, 1, 0, Working directory: C:\Users\Adriana\Documents\Proyectos\Github\WCF_REX_SAP\RFConsumerPedidos\RFConsumer\bin\Debug, Program: C:\Users\Adriana\Documents\Proyectos\Github\WCF_REX_SAP\RFConsumerPedidos\RFConsumer\bin\Debug\RFConsumer.exe
+	Hardware: PC with Windows NT, Processor: 4x AMD64 Level 6 (Mod 42 Step 7), Operating system: Microsoft Windows NT 6.2.9200.0, .NET CLR version: 4.0.30319.42000
+ 	SAP release: 720, Kernel release: 720, Kernel patch level: 78
+	Hostname: DESKTOP-M3VR1N6, IP address: 192.168.253.142, IP_v6 address: 
+
+	Default trace level: None
+
+>> Error entry 2019-07-16 16:14:44.523
+SAP.Middleware.Connector.RfcAbapRuntimeException: Syntax error in program SAPLZSD_REXSAP                          .
+   en SAP.Middleware.Connector.RfcConnection.ThrowRfcErrorMsg()
+   en SAP.Middleware.Connector.RfcConnection.ReadBytes(Byte* buffer, Int32 count)
+   en SAP.Middleware.Connector.RfcConnection.ReadRfcIDBegin(Int32& length)
+   en SAP.Middleware.Connector.RfcConnection.ReadUpTo(RFCGET readState, RfcFunction function, RFCID toRid)
+   en SAP.Middleware.Connector.RfcConnection.RfcReceive(RfcFunction function)
+   en SAP.Middleware.Connector.RfcFunction.RfcDeserialize(RfcConnection conn, IRfcIOStream stream)
+   en SAP.Middleware.Connector.RfcFunction.RfcCallReceive(RfcConnection conn, IRfcIOStream stream, RFCID rid)
+   en SAP.Middleware.Connector.RfcFunction.Invoke(RfcDestination destination)
+**** Trace file opened at 2019-07-16 16:26:10-05:00 (Hora est. Pacífico, Sudamérica)
+	SAP .NET Connector: 3, 0, 1, 0, Working directory: C:\Users\Adriana\Documents\Proyectos\Github\WCF_REX_SAP\RFConsumerPedidos\RFConsumer\bin\Debug, Program: C:\Users\Adriana\Documents\Proyectos\Github\WCF_REX_SAP\RFConsumerPedidos\RFConsumer\bin\Debug\RFConsumer.exe
+	Hardware: PC with Windows NT, Processor: 4x AMD64 Level 6 (Mod 42 Step 7), Operating system: Microsoft Windows NT 6.2.9200.0, .NET CLR version: 4.0.30319.42000
+ 	SAP release: 720, Kernel release: 720, Kernel patch level: 78
+	Hostname: DESKTOP-M3VR1N6, IP address: 192.168.253.142, IP_v6 address: 
+
+	Default trace level: None
+
+>> Error entry 2019-07-16 16:26:10.507
+SAP.Middleware.Connector.RfcAbapRuntimeException: Syntax error in program SAPLZSD_REXSAP                          .
+   en SAP.Middleware.Connector.RfcConnection.ThrowRfcErrorMsg()
+   en SAP.Middleware.Connector.RfcConnection.ReadBytes(Byte* buffer, Int32 count)
+   en SAP.Middleware.Connector.RfcConnection.ReadRfcIDBegin(Int32& length)
+   en SAP.Middleware.Connector.RfcConnection.ReadUpTo(RFCGET readState, RfcFunction function, RFCID toRid)
+   en SAP.Middleware.Connector.RfcConnection.RfcReceive(RfcFunction function)
+   en SAP.Middleware.Connector.RfcFunction.RfcDeserialize(RfcConnection conn, IRfcIOStream stream)
+   en SAP.Middleware.Connector.RfcFunction.RfcCallReceive(RfcConnection conn, IRfcIOStream stream, RFCID rid)
+   en SAP.Middleware.Connector.RfcFunction.Invoke(RfcDestination destination)
+**** Trace file opened at 2019-07-16 16:30:27-05:00 (Hora est. Pacífico, Sudamérica)
+	SAP .NET Connector: 3, 0, 1, 0, Working directory: C:\Users\Adriana\Documents\Proyectos\Github\WCF_REX_SAP\RFConsumerPedidos\RFConsumer\bin\Debug, Program: C:\Users\Adriana\Documents\Proyectos\Github\WCF_REX_SAP\RFConsumerPedidos\RFConsumer\bin\Debug\RFConsumer.exe
+	Hardware: PC with Windows NT, Processor: 4x AMD64 Level 6 (Mod 42 Step 7), Operating system: Microsoft Windows NT 6.2.9200.0, .NET CLR version: 4.0.30319.42000
+ 	SAP release: 720, Kernel release: 720, Kernel patch level: 78
+	Hostname: DESKTOP-M3VR1N6, IP address: 192.168.253.142, IP_v6 address: 
+
+	Default trace level: None
+
+>> Error entry 2019-07-16 16:30:27.304
+SAP.Middleware.Connector.RfcAbapRuntimeException: Syntax error in program SAPLZSD_REXSAP                          .
+   en SAP.Middleware.Connector.RfcConnection.ThrowRfcErrorMsg()
+   en SAP.Middleware.Connector.RfcConnection.ReadBytes(Byte* buffer, Int32 count)
+   en SAP.Middleware.Connector.RfcConnection.ReadRfcIDBegin(Int32& length)
+   en SAP.Middleware.Connector.RfcConnection.ReadUpTo(RFCGET readState, RfcFunction function, RFCID toRid)
+   en SAP.Middleware.Connector.RfcConnection.RfcReceive(RfcFunction function)
+   en SAP.Middleware.Connector.RfcFunction.RfcDeserialize(RfcConnection conn, IRfcIOStream stream)
+   en SAP.Middleware.Connector.RfcFunction.RfcCallReceive(RfcConnection conn, IRfcIOStream stream, RFCID rid)
+   en SAP.Middleware.Connector.RfcFunction.Invoke(RfcDestination destination)
+**** Trace file opened at 2019-07-17 09:12:17-05:00 (Hora est. Pacífico, Sudamérica)
+	SAP .NET Connector: 3, 0, 1, 0, Working directory: C:\Users\Adriana\Documents\Proyectos\Github\WCF_REX_SAP\RFConsumerPedidos\RFConsumer\bin\Debug, Program: C:\Users\Adriana\Documents\Proyectos\Github\WCF_REX_SAP\RFConsumerPedidos\RFConsumer\bin\Debug\RFConsumer.exe
+	Hardware: PC with Windows NT, Processor: 4x AMD64 Level 6 (Mod 42 Step 7), Operating system: Microsoft Windows NT 6.2.9200.0, .NET CLR version: 4.0.30319.42000
+ 	SAP release: 720, Kernel release: 720, Kernel patch level: 78
+	Hostname: DESKTOP-M3VR1N6, IP address: 192.168.1.51, IP_v6 address: 
+
+	Default trace level: None
+
+>> Error entry 2019-07-17 09:12:17.714
+Failure to create pool for destination Desarrollo
+SAP.Middleware.Connector.RfcCommunicationException: 
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       partner '10.16.1.30:3300' not reached
+TIME        Wed Jul 17 09:12:16 2019
+RELEASE     720
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      nixxi.cpp
+LINE        3286
+DETAIL      NiPConnect2: 10.16.1.30:3300
+SYSTEM CALL connect
+ERRNO       10060
+ERRNO TEXT  WSAETIMEDOUT: Connection timed out
+COUNTER     1
+
+   en SAP.Middleware.Connector.CpicConnection.ConnectAsClient(Dictionary`2 options)
+   en SAP.Middleware.Connector.RfcConnection.ConnectAsClient(RfcConfigParameters options)
+   en SAP.Middleware.Connector.RfcConnectionPool..ctor(RfcDestination d, Boolean forRepositoryCalls, String uniqueKey)
+>> Error entry 2019-07-17 09:12:17.929
+SAP.Middleware.Connector.RfcCommunicationException: 
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       partner '10.16.1.30:3300' not reached
+TIME        Wed Jul 17 09:12:16 2019
+RELEASE     720
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      nixxi.cpp
+LINE        3286
+DETAIL      NiPConnect2: 10.16.1.30:3300
+SYSTEM CALL connect
+ERRNO       10060
+ERRNO TEXT  WSAETIMEDOUT: Connection timed out
+COUNTER     1
+
+   en SAP.Middleware.Connector.CpicConnection.ConnectAsClient(Dictionary`2 options)
+   en SAP.Middleware.Connector.RfcConnection.ConnectAsClient(RfcConfigParameters options)
+   en SAP.Middleware.Connector.RfcConnectionPool..ctor(RfcDestination d, Boolean forRepositoryCalls, String uniqueKey)
+   en SAP.Middleware.Connector.RfcConnectionManager.GetClient(RfcDestination destination, Boolean forRepository)
+   en SAP.Middleware.Connector.RfcDestination.GetClient(Boolean forRepository)
+   en SAP.Middleware.Connector.RfcDestination.SetAttributeValues(RfcSystemAttributes attribs)
+**** Trace file opened at 2019-07-18 17:00:09-05:00 (Hora est. Pacífico, Sudamérica)
+	SAP .NET Connector: 3, 0, 1, 0, Working directory: C:\Users\Adriana\Documents\Proyectos\Github\WCF_REX_SAP\RFConsumerPedidos\RFConsumer\bin\Debug, Program: C:\Users\Adriana\Documents\Proyectos\Github\WCF_REX_SAP\RFConsumerPedidos\RFConsumer\bin\Debug\RFConsumer.exe
+	Hardware: PC with Windows NT, Processor: 4x AMD64 Level 6 (Mod 42 Step 7), Operating system: Microsoft Windows NT 6.2.9200.0, .NET CLR version: 4.0.30319.42000
+ 	SAP release: 720, Kernel release: 720, Kernel patch level: 78
+	Hostname: DESKTOP-M3VR1N6, IP address: 192.168.1.51, IP_v6 address: 
+
+	Default trace level: None
+
+>> Error entry 2019-07-18 17:00:09.692
+Failure to create pool for destination Desarrollo
+SAP.Middleware.Connector.RfcCommunicationException: 
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       partner '10.16.1.30:3300' not reached
+TIME        Thu Jul 18 17:00:09 2019
+RELEASE     720
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      nixxi.cpp
+LINE        3286
+DETAIL      NiPConnect2: 10.16.1.30:3300
+SYSTEM CALL connect
+ERRNO       10060
+ERRNO TEXT  WSAETIMEDOUT: Connection timed out
+COUNTER     1
+
+   en SAP.Middleware.Connector.CpicConnection.ConnectAsClient(Dictionary`2 options)
+   en SAP.Middleware.Connector.RfcConnection.ConnectAsClient(RfcConfigParameters options)
+   en SAP.Middleware.Connector.RfcConnectionPool..ctor(RfcDestination d, Boolean forRepositoryCalls, String uniqueKey)
+>> Error entry 2019-07-18 17:00:09.907
+SAP.Middleware.Connector.RfcCommunicationException: 
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       partner '10.16.1.30:3300' not reached
+TIME        Thu Jul 18 17:00:09 2019
+RELEASE     720
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      nixxi.cpp
+LINE        3286
+DETAIL      NiPConnect2: 10.16.1.30:3300
+SYSTEM CALL connect
+ERRNO       10060
+ERRNO TEXT  WSAETIMEDOUT: Connection timed out
+COUNTER     1
+
+   en SAP.Middleware.Connector.CpicConnection.ConnectAsClient(Dictionary`2 options)
+   en SAP.Middleware.Connector.RfcConnection.ConnectAsClient(RfcConfigParameters options)
+   en SAP.Middleware.Connector.RfcConnectionPool..ctor(RfcDestination d, Boolean forRepositoryCalls, String uniqueKey)
+   en SAP.Middleware.Connector.RfcConnectionManager.GetClient(RfcDestination destination, Boolean forRepository)
+   en SAP.Middleware.Connector.RfcDestination.GetClient(Boolean forRepository)
+   en SAP.Middleware.Connector.RfcDestination.SetAttributeValues(RfcSystemAttributes attribs)
+**** Trace file opened at 2019-07-18 18:42:33-05:00 (Hora est. Pacífico, Sudamérica)
+	SAP .NET Connector: 3, 0, 1, 0, Working directory: C:\Users\Adriana\Documents\Proyectos\Github\WCF_REX_SAP\RFConsumerPedidos\RFConsumer\bin\Debug, Program: C:\Users\Adriana\Documents\Proyectos\Github\WCF_REX_SAP\RFConsumerPedidos\RFConsumer\bin\Debug\RFConsumer.exe
+	Hardware: PC with Windows NT, Processor: 4x AMD64 Level 6 (Mod 42 Step 7), Operating system: Microsoft Windows NT 6.2.9200.0, .NET CLR version: 4.0.30319.42000
+ 	SAP release: 720, Kernel release: 720, Kernel patch level: 78
+	Hostname: DESKTOP-M3VR1N6, IP address: 192.168.253.142, IP_v6 address: 
+
+	Default trace level: None
+
+>> Error entry 2019-07-18 18:42:34.030
+SAP.Middleware.Connector.RfcTypeConversionException: FIELD KETDAT of TABLE [STRUCTURE ZRSAP_PEDIDOS] (SETTER): cannot convert String into DATE ---> SAP.Middleware.Connector.RfcTypeConversionException: Cannot convert 18/07/2019 0:00:00 into DATE (yyyyMMdd) ---> System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.ParseExact(String s, String format, DateTimeFormatInfo dtfi, DateTimeStyles style)
+   en SAP.Middleware.Connector.RfcScalarMetadataDate.ConvertString(String value, Object& currentValue)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en SAP.Middleware.Connector.RfcScalarMetadataDate.ConvertString(String value, Object& currentValue)
+   en SAP.Middleware.Connector.RfcDataContainer`1.SetValue(Int32 index, String value)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en SAP.Middleware.Connector.RfcDataContainer`1.SetValue(Int32 index, String value)
+**** Trace file opened at 2019-07-18 18:44:28-05:00 (Hora est. Pacífico, Sudamérica)
+	SAP .NET Connector: 3, 0, 1, 0, Working directory: C:\Users\Adriana\Documents\Proyectos\Github\WCF_REX_SAP\RFConsumerPedidos\RFConsumer\bin\Debug, Program: C:\Users\Adriana\Documents\Proyectos\Github\WCF_REX_SAP\RFConsumerPedidos\RFConsumer\bin\Debug\RFConsumer.exe
+	Hardware: PC with Windows NT, Processor: 4x AMD64 Level 6 (Mod 42 Step 7), Operating system: Microsoft Windows NT 6.2.9200.0, .NET CLR version: 4.0.30319.42000
+ 	SAP release: 720, Kernel release: 720, Kernel patch level: 78
+	Hostname: DESKTOP-M3VR1N6, IP address: 192.168.253.142, IP_v6 address: 
+
+	Default trace level: None
+
+>> Error entry 2019-07-18 18:44:28.853
+SAP.Middleware.Connector.RfcTypeConversionException: FIELD KETDAT of TABLE [STRUCTURE ZRSAP_PEDIDOS] (SETTER): cannot convert String into DATE ---> SAP.Middleware.Connector.RfcTypeConversionException: Cannot convert 18/07/2019 0:00:00 into DATE (yyyyMMdd) ---> System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.ParseExact(String s, String format, DateTimeFormatInfo dtfi, DateTimeStyles style)
+   en SAP.Middleware.Connector.RfcScalarMetadataDate.ConvertString(String value, Object& currentValue)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en SAP.Middleware.Connector.RfcScalarMetadataDate.ConvertString(String value, Object& currentValue)
+   en SAP.Middleware.Connector.RfcDataContainer`1.SetValue(Int32 index, String value)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en SAP.Middleware.Connector.RfcDataContainer`1.SetValue(Int32 index, String value)
+**** Trace file opened at 2019-07-18 20:27:42-05:00 (Hora est. Pacífico, Sudamérica)
+	SAP .NET Connector: 3, 0, 1, 0, Working directory: C:\Users\Adriana\Documents\Proyectos\Github\WCF_REX_SAP\RFConsumerPedidos\RFConsumer\bin\Debug, Program: C:\Users\Adriana\Documents\Proyectos\Github\WCF_REX_SAP\RFConsumerPedidos\RFConsumer\bin\Debug\RFConsumer.exe
+	Hardware: PC with Windows NT, Processor: 4x AMD64 Level 6 (Mod 42 Step 7), Operating system: Microsoft Windows NT 6.2.9200.0, .NET CLR version: 4.0.30319.42000
+ 	SAP release: 720, Kernel release: 720, Kernel patch level: 78
+	Hostname: DESKTOP-M3VR1N6, IP address: 192.168.1.51, IP_v6 address: 
+
+	Default trace level: None
+
+>> Error entry 2019-07-18 20:27:42.212
+Failure to create pool for destination Desarrollo
+SAP.Middleware.Connector.RfcCommunicationException: 
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       partner '10.16.1.30:3300' not reached
+TIME        Thu Jul 18 20:27:42 2019
+RELEASE     720
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      nixxi.cpp
+LINE        3286
+DETAIL      NiPConnect2: 10.16.1.30:3300
+SYSTEM CALL connect
+ERRNO       10060
+ERRNO TEXT  WSAETIMEDOUT: Connection timed out
+COUNTER     1
+
+   en SAP.Middleware.Connector.CpicConnection.ConnectAsClient(Dictionary`2 options)
+   en SAP.Middleware.Connector.RfcConnection.ConnectAsClient(RfcConfigParameters options)
+   en SAP.Middleware.Connector.RfcConnectionPool..ctor(RfcDestination d, Boolean forRepositoryCalls, String uniqueKey)
+>> Error entry 2019-07-18 20:27:42.245
+SAP.Middleware.Connector.RfcCommunicationException: 
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       partner '10.16.1.30:3300' not reached
+TIME        Thu Jul 18 20:27:42 2019
+RELEASE     720
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      nixxi.cpp
+LINE        3286
+DETAIL      NiPConnect2: 10.16.1.30:3300
+SYSTEM CALL connect
+ERRNO       10060
+ERRNO TEXT  WSAETIMEDOUT: Connection timed out
+COUNTER     1
+
+   en SAP.Middleware.Connector.CpicConnection.ConnectAsClient(Dictionary`2 options)
+   en SAP.Middleware.Connector.RfcConnection.ConnectAsClient(RfcConfigParameters options)
+   en SAP.Middleware.Connector.RfcConnectionPool..ctor(RfcDestination d, Boolean forRepositoryCalls, String uniqueKey)
+   en SAP.Middleware.Connector.RfcConnectionManager.GetClient(RfcDestination destination, Boolean forRepository)
+   en SAP.Middleware.Connector.RfcDestination.GetClient(Boolean forRepository)
+   en SAP.Middleware.Connector.RfcDestination.SetAttributeValues(RfcSystemAttributes attribs)
+**** Trace file opened at 2019-07-19 09:30:21-05:00 (Hora est. Pacífico, Sudamérica)
+	SAP .NET Connector: 3, 0, 1, 0, Working directory: C:\Users\Adriana\Documents\Proyectos\Github\WCF_REX_SAP\RFConsumerPedidos\RFConsumer\bin\Debug, Program: C:\Users\Adriana\Documents\Proyectos\Github\WCF_REX_SAP\RFConsumerPedidos\RFConsumer\bin\Debug\RFConsumer.exe
+	Hardware: PC with Windows NT, Processor: 4x AMD64 Level 6 (Mod 42 Step 7), Operating system: Microsoft Windows NT 6.2.9200.0, .NET CLR version: 4.0.30319.42000
+ 	SAP release: 720, Kernel release: 720, Kernel patch level: 78
+	Hostname: DESKTOP-M3VR1N6, IP address: 192.168.1.51, IP_v6 address: 
+
+	Default trace level: None
+
+>> Error entry 2019-07-19 09:30:21.405
+Failure to create pool for destination Desarrollo
+SAP.Middleware.Connector.RfcCommunicationException: 
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       partner '10.16.1.30:3300' not reached
+TIME        Fri Jul 19 09:30:21 2019
+RELEASE     720
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      nixxi.cpp
+LINE        3286
+DETAIL      NiPConnect2: 10.16.1.30:3300
+SYSTEM CALL connect
+ERRNO       10060
+ERRNO TEXT  WSAETIMEDOUT: Connection timed out
+COUNTER     1
+
+   en SAP.Middleware.Connector.CpicConnection.ConnectAsClient(Dictionary`2 options)
+   en SAP.Middleware.Connector.RfcConnection.ConnectAsClient(RfcConfigParameters options)
+   en SAP.Middleware.Connector.RfcConnectionPool..ctor(RfcDestination d, Boolean forRepositoryCalls, String uniqueKey)
+>> Error entry 2019-07-19 09:30:21.553
+SAP.Middleware.Connector.RfcCommunicationException: 
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       partner '10.16.1.30:3300' not reached
+TIME        Fri Jul 19 09:30:21 2019
+RELEASE     720
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      nixxi.cpp
+LINE        3286
+DETAIL      NiPConnect2: 10.16.1.30:3300
+SYSTEM CALL connect
+ERRNO       10060
+ERRNO TEXT  WSAETIMEDOUT: Connection timed out
+COUNTER     1
+
+   en SAP.Middleware.Connector.CpicConnection.ConnectAsClient(Dictionary`2 options)
+   en SAP.Middleware.Connector.RfcConnection.ConnectAsClient(RfcConfigParameters options)
+   en SAP.Middleware.Connector.RfcConnectionPool..ctor(RfcDestination d, Boolean forRepositoryCalls, String uniqueKey)
+   en SAP.Middleware.Connector.RfcConnectionManager.GetClient(RfcDestination destination, Boolean forRepository)
+   en SAP.Middleware.Connector.RfcDestination.GetClient(Boolean forRepository)
+   en SAP.Middleware.Connector.RfcDestination.SetAttributeValues(RfcSystemAttributes attribs)
+**** Trace file opened at 2019-07-23 15:58:08-05:00 (Hora est. Pacífico, Sudamérica)
+	SAP .NET Connector: 3, 0, 1, 0, Working directory: C:\Users\Adriana\Documents\Proyectos\Github\WCF_REX_SAP\RFConsumerPedidos\RFConsumer\bin\Debug, Program: C:\Users\Adriana\Documents\Proyectos\Github\WCF_REX_SAP\RFConsumerPedidos\RFConsumer\bin\Debug\RFConsumer.exe
+	Hardware: PC with Windows NT, Processor: 4x AMD64 Level 6 (Mod 42 Step 7), Operating system: Microsoft Windows NT 6.2.9200.0, .NET CLR version: 4.0.30319.42000
+ 	SAP release: 720, Kernel release: 720, Kernel patch level: 78
+	Hostname: DESKTOP-M3VR1N6, IP address: 192.168.253.155, IP_v6 address: 
+
+	Default trace level: None
+
+>> Error entry 2019-07-23 15:58:08.794
+Failure to create pool for destination Desarrollo
+SAP.Middleware.Connector.RfcLogonException: La cuenta de usuario o ya no es válida o aún no es válida
+   en SAP.Middleware.Connector.RfcConnection.ConnectAsClient(RfcConfigParameters options)
+   en SAP.Middleware.Connector.RfcConnectionPool..ctor(RfcDestination d, Boolean forRepositoryCalls, String uniqueKey)
+>> Error entry 2019-07-23 15:58:08.807
+SAP.Middleware.Connector.RfcLogonException: La cuenta de usuario o ya no es válida o aún no es válida
+   en SAP.Middleware.Connector.RfcConnection.ConnectAsClient(RfcConfigParameters options)
+   en SAP.Middleware.Connector.RfcConnectionPool..ctor(RfcDestination d, Boolean forRepositoryCalls, String uniqueKey)
+   en SAP.Middleware.Connector.RfcConnectionManager.GetClient(RfcDestination destination, Boolean forRepository)
+   en SAP.Middleware.Connector.RfcDestination.GetClient(Boolean forRepository)
+   en SAP.Middleware.Connector.RfcDestination.SetAttributeValues(RfcSystemAttributes attribs)
+**** Trace file opened at 2019-07-23 15:59:47-05:00 (Hora est. Pacífico, Sudamérica)
+	SAP .NET Connector: 3, 0, 1, 0, Working directory: C:\Users\Adriana\Documents\Proyectos\Github\WCF_REX_SAP\RFConsumerPedidos\RFConsumer\bin\Debug, Program: C:\Users\Adriana\Documents\Proyectos\Github\WCF_REX_SAP\RFConsumerPedidos\RFConsumer\bin\Debug\RFConsumer.exe
+	Hardware: PC with Windows NT, Processor: 4x AMD64 Level 6 (Mod 42 Step 7), Operating system: Microsoft Windows NT 6.2.9200.0, .NET CLR version: 4.0.30319.42000
+ 	SAP release: 720, Kernel release: 720, Kernel patch level: 78
+	Hostname: DESKTOP-M3VR1N6, IP address: 192.168.253.155, IP_v6 address: 
+
+	Default trace level: None
+
+>> Error entry 2019-07-23 15:59:47.231
+Failure to create pool for destination Desarrollo
+SAP.Middleware.Connector.RfcLogonException: La cuenta de usuario o ya no es válida o aún no es válida
+   en SAP.Middleware.Connector.RfcConnection.ConnectAsClient(RfcConfigParameters options)
+   en SAP.Middleware.Connector.RfcConnectionPool..ctor(RfcDestination d, Boolean forRepositoryCalls, String uniqueKey)
+>> Error entry 2019-07-23 15:59:47.244
+SAP.Middleware.Connector.RfcLogonException: La cuenta de usuario o ya no es válida o aún no es válida
+   en SAP.Middleware.Connector.RfcConnection.ConnectAsClient(RfcConfigParameters options)
+   en SAP.Middleware.Connector.RfcConnectionPool..ctor(RfcDestination d, Boolean forRepositoryCalls, String uniqueKey)
+   en SAP.Middleware.Connector.RfcConnectionManager.GetClient(RfcDestination destination, Boolean forRepository)
+   en SAP.Middleware.Connector.RfcDestination.GetClient(Boolean forRepository)
+   en SAP.Middleware.Connector.RfcDestination.SetAttributeValues(RfcSystemAttributes attribs)

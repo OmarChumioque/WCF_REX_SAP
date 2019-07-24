@@ -15,13 +15,21 @@ namespace RFC
 
         public BdConnection() {
 
-            conn = new SqlConnection("Data Source=172.31.236.221;" +
-               "Initial Catalog=rex;" +
-               "User Id=rexdb;Password=rexdb2019;" +
-               "connect timeout=2000;");
+      
+         conn = new SqlConnection("Data Source=172.31.236.221;" +
+                        "Initial Catalog=rex;" +
+                        "User Id=rexdb;Password=rexdb2019;" +
+                        "connect timeout=2000;");
+            /*
+               conn = new SqlConnection("Data Source=185.144.157.97;" +
+            "Initial Catalog=rex;" +
+            "User Id=omarch1409;Password=1409Chumioque;" +
+            "connect timeout=2000;"); */
+
+
         }
 
-        public List<Pedido> ObtenerPedidos() {
+        public List<Pedido> ObtenerPedidos(DateTime dt) {
 
             List<Pedido> list = new List<Pedido>();
             try
@@ -29,6 +37,7 @@ namespace RFC
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("pintpedido", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@fechaPedido",dt));
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
@@ -45,9 +54,11 @@ namespace RFC
                     p.Netpr = Convert.ToDecimal(reader["NETPR"].ToString());
                     p.Pstyv = reader["PSTYV"].ToString();
                     p.Vbeln = reader["VBELN"].ToString();
+                    p.Posnr = reader["POSNR"].ToString();
+                    p.Ketdat =Convert.ToDateTime( reader["KETDAT"]);
+                    p.Vrkme = reader["VRKME"].ToString();
                     list.Add(p);
                 }
-
 
             }
             catch (Exception e)
@@ -62,6 +73,7 @@ namespace RFC
             }
 
             return list;
+
         }
 
         public void AgregarMovimientosAlmacen(DataTable dt)
@@ -100,7 +112,41 @@ namespace RFC
 
 
 
-        } 
+        }
+        
+        
+        
+        public void ResultadoPedidos(DataTable table) {
+            try
+            {
+
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("delete DocSapPedidos", conn);
+                cmd.ExecuteNonQuery();
+                if (conn.State == System.Data.ConnectionState.Open)
+                {
+                    SqlBulkCopy bulk = new SqlBulkCopy(conn);
+                    bulk.DestinationTableName = "DocSapPedidos";
+                    bulk.ColumnMappings.Add("BSTKD", "BSTKD");
+                    bulk.ColumnMappings.Add("VBELN", "VBELN");
+                    bulk.WriteToServer(table);
+                    SqlCommand stored = new SqlCommand("pintPedidoResult", conn);
+                    stored.CommandType = CommandType.StoredProcedure;
+                    stored.ExecuteNonQuery();
+                }
+
+            }
+            catch (Exception e)
+            {
+                e.ToString();
+            }
+            finally {
+
+                conn.Close();
+            }
+
+        }
+        
 
     }
 }

@@ -53,9 +53,9 @@ namespace RFC
                 e.ToString();
             }
 
-            IRfcFunction function = rfcDest.Repository.CreateFunction("ZSD_REXSAP_008");// A la espera del nombre de la funcio
-            IRfcTable doc = function.GetTable("M_PEDIDOS");//A la espera del nombre de la tabla
-            //     doc.Insert();
+            IRfcFunction function = rfcDest.Repository.CreateFunction("ZSD_REXSAP_010");// A la espera del nombre de la funcio
+            IRfcTable doc = function.GetTable("TI_DOCREXSAP");//A la espera del nombre de la tabla
+              doc.Insert();
             doc.Insert(cobranzas.Count());
            
             for (int i = 0; i <cobranzas.Count(); i++)
@@ -86,6 +86,49 @@ namespace RFC
                 return false;
             }
           
+        }
+
+
+        public DataTable ObtenerDatosCobranza()
+        {
+
+            RfcConfigParameters rfc = new RfcConfigParameters();
+            rfc.Add(RfcConfigParameters.Name, "Desarrollo");
+            rfc.Add(RfcConfigParameters.AppServerHost, "10.16.1.30");
+            rfc.Add(RfcConfigParameters.Client, "600");
+            rfc.Add(RfcConfigParameters.User, "REXSAP2");
+            rfc.Add(RfcConfigParameters.Password, "Rexsap01");
+            rfc.Add(RfcConfigParameters.SystemNumber, "00");
+            rfc.Add(RfcConfigParameters.Language, "ES");
+            rfc.Add(RfcConfigParameters.PoolSize, "5");
+            rfc.Add(RfcConfigParameters.MaxPoolSize, "100");
+            rfc.Add(RfcConfigParameters.IdleTimeout, "900");
+            RfcDestination rfcDest = null;
+
+
+            try
+            {
+                rfcDest = RfcDestinationManager.GetDestination(rfc);
+            }
+            catch (Exception e)
+            {
+                e.ToString();
+            }
+
+            try
+            {
+                IRfcFunction function = rfcDest.Repository.CreateFunction("ZSD_REXSAP_009");
+                RfcRepository rfcRep = null;
+                function.Invoke(rfcDest);
+                IRfcTable doc = function.GetTable("IT_DOCSAPREX");
+                DataTable table = IRfcTable_To_DataTable(doc, "IT_DOCSAPREX");
+                return table;
+            }
+            catch (RfcBaseException e)
+            {
+                return null;
+            }
+
         }
         private  DataTable IRfcTable_To_DataTable(IRfcTable doc, string tableName) {
             DataTable table = new DataTable(tableName);
