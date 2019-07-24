@@ -15,11 +15,13 @@ namespace RFConsumer
             RfcInvoke rfcs = new RfcInvoke("01.01.2016", "01.07.2019");
             rfcs.WriteToFile();
             */
-           BdConnection bd = new BdConnection();
-           RfcInvoke rfcs = new RfcInvoke("20190619");
-         
-           DataTable dt= rfcs.ObtenerStock();
-           bd.RecibirStock(dt);
+            BdConnection bd = new BdConnection();
+
+            RfcInvoke rfcs = new RfcInvoke("20190619");
+
+            DataTable dt = rfcs.ObtenerStock();
+
+            bd.RecibirStock(dt);
         }
 
     }
