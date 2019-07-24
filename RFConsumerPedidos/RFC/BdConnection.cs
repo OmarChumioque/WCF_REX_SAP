@@ -29,15 +29,15 @@ namespace RFC
 
         }
 
-        public List<Pedido> ObtenerPedidos(DateTime dt) {
+        public List<Pedido> ObtenerPedidos() {
 
             List<Pedido> list = new List<Pedido>();
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("pintpedido", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add(new SqlParameter("@fechaPedido",dt));
+                SqlCommand cmd = new SqlCommand("sp_sap_inpedido", conn);
+                //cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.Add(new SqlParameter("@fechaPedido",dt));
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
