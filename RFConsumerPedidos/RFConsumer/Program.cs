@@ -15,8 +15,10 @@ namespace RFConsumer
            bool seEjecuto=false;
            BdConnection bd = new BdConnection();
            RfcInvoke rfcs = new RfcInvoke();
-           List<Pedido> list = bd.ObtenerPedidos();
-           seEjecuto= rfcs.IngresarPedidos(list);
+           List<Pedido> pedidos = bd.ObtenerPedidos();
+
+           seEjecuto= rfcs.IngresarPedidos(pedidos);
+
            Console.Write(seEjecuto);
            Console.ReadLine();
 
