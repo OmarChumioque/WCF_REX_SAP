@@ -130,9 +130,9 @@ namespace RFC
                     bulk.ColumnMappings.Add("BSTKD", "BSTKD");
                     bulk.ColumnMappings.Add("VBELN", "VBELN");
                     bulk.WriteToServer(table);
-                    SqlCommand stored = new SqlCommand("pintPedidoResult", conn);
+                   /* SqlCommand stored = new SqlCommand("pintPedidoResult", conn);
                     stored.CommandType = CommandType.StoredProcedure;
-                    stored.ExecuteNonQuery();
+                    stored.ExecuteNonQuery();*/
                 }
 
             }
@@ -146,7 +146,42 @@ namespace RFC
             }
 
         }
-        
+
+
+        public void MensajesResultado(DataTable table) {
+
+            try
+            {
+
+                conn.Open();
+                /*
+                SqlCommand cmd = new SqlCommand("delete DocSapPedidos", conn);
+                cmd.ExecuteNonQuery();*/
+                if (conn.State == System.Data.ConnectionState.Open)
+                {
+                    SqlBulkCopy bulk = new SqlBulkCopy(conn);
+                    bulk.DestinationTableName = "sap_cab_Error";
+                    bulk.ColumnMappings.Add("TYPE", "TYPE");
+                    bulk.ColumnMappings.Add("BSTKD", "BSTKD");
+                    bulk.ColumnMappings.Add("KUNNR", "KUNNR");
+                    bulk.ColumnMappings.Add("MESSAGE", "MESSAGE");
+                    bulk.WriteToServer(table);
+                    /* SqlCommand stored = new SqlCommand("pintPedidoResult", conn);
+                     stored.CommandType = CommandType.StoredProcedure;
+                     stored.ExecuteNonQuery();*/
+                }
+
+            }
+            catch (Exception e)
+            {
+                e.ToString();
+            }
+            finally
+            {
+
+                conn.Close();
+            }
+        }
 
     }
 }

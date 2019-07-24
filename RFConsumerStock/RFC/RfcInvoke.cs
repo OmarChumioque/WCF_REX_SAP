@@ -61,21 +61,10 @@ namespace RFC
             IRfcFunction function = rfcRep.CreateFunction("ZSD_REXSAP_006");
 
             
-
+            /*
             IRfcTable material;
             material = function.GetTable("TI_MATNR");
-
-            BdConnection bd = new BdConnection();
-
-            foreach (TI_MATNR mat in bd.GetMaterial()) {
-                material.Append();
-                material.SetValue("SIGN", mat.SIGN);
-                material.SetValue("OPTION", mat.OPTION);
-                material.SetValue("LOW", mat.LOW);
-                material.SetValue("HIGH", "");
-            }
-
-
+            */
 
             try
             {

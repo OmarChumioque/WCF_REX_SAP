@@ -13,14 +13,13 @@ namespace RFConsumer
     {
         static void Main(string[] args)
         {
-            List<DataTable> seEjecuto;
+          
             BdConnection bd = new BdConnection();
             RfcInvoke rfcs = new RfcInvoke();
             List<Pedido> pedidos = bd.ObtenerPedidos();
-
-            seEjecuto = rfcs.IngresarPedidos(pedidos);
-
-            Console.Write(seEjecuto);
+            List<DataTable> listTable = rfcs.IngresarPedidos(pedidos);
+            bd.ResultadoPedidos(listTable[0]);
+            bd.MensajesResultado(listTable[1]);
             //Console.ReadLine();
 
         }

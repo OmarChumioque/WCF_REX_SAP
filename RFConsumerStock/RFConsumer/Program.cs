@@ -11,10 +11,7 @@ namespace RFConsumer
     {
         static void Main(string[] args)
         {
-            /*
-            RfcInvoke rfcs = new RfcInvoke("01.01.2016", "01.07.2019");
-            rfcs.WriteToFile();
-            */
+        
             BdConnection bd = new BdConnection();
 
             RfcInvoke rfcs = new RfcInvoke("20190619");
