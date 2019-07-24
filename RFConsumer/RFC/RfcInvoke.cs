@@ -17,6 +17,11 @@ namespace RFC
         private string iM_FEC_FIN;
         private string I_BUDAT;
 
+        public RfcInvoke()
+        {
+    
+        }
+
         public RfcInvoke(string I_BUDAT)
         {
             this.I_BUDAT = I_BUDAT;
@@ -29,7 +34,7 @@ namespace RFC
             this.iM_FEC_FIN = FEC_FIN;
         }
 
-        public void WriteToFile()
+        public DataTable ObtenerMovimientos()
         {
 
             bool guardar = true;
@@ -61,8 +66,9 @@ namespace RFC
             //
             //   IRfcFunction function = rfcRep.CreateFunction("ZSD_REXSAP_003");
             IRfcFunction function = rfcRep.CreateFunction("ZSD_REXSAP_007");
-            
-            function.SetValue("I_BUDAT", I_BUDAT);
+
+           
+            function.SetValue("I_BUDAT", DateTime.Now.Date);
             try
             {
                 function.Invoke(rfcDest);
@@ -75,12 +81,15 @@ namespace RFC
 
             if (guardar)
             {
-               
-     //           IRfcTable doc = function.GetTable("MSTOCKS");
+
+                //           IRfcTable doc = function.GetTable("MSTOCKS");
                 IRfcTable doc = function.GetTable("MOVALMACEN");
                 DataTable table = IRfcTable_To_DataTable(doc, "MOVALMACEN");
-                BdConnection bd = new BdConnection();
-                bd.AgregarMovimientosAlmacen(table);
+                return table;
+           
+            }
+            else {
+                return null;
             }
             Console.ReadLine();
         }

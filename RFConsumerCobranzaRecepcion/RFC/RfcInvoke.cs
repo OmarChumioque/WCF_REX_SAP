@@ -33,7 +33,6 @@ namespace RFC
         public DataTable ObtenerDatosCobranza()
         {
 
-          
             RfcConfigParameters rfc = new RfcConfigParameters();
             rfc.Add(RfcConfigParameters.Name, "Desarrollo");
             rfc.Add(RfcConfigParameters.AppServerHost, "10.16.1.30");
@@ -57,10 +56,10 @@ namespace RFC
                 e.ToString();
             }
 
-            IRfcFunction function = rfcDest.Repository.CreateFunction("ZSD_REXSAP_009");
-            RfcRepository rfcRep = null;
-            try
+           try
             {
+                IRfcFunction function = rfcDest.Repository.CreateFunction("ZSD_REXSAP_009");
+                RfcRepository rfcRep = null;
                 function.Invoke(rfcDest);
                 IRfcTable doc = function.GetTable("IT_DOCSAPREX");
                 DataTable table = IRfcTable_To_DataTable(doc, "IT_DOCSAPREX");
@@ -71,10 +70,6 @@ namespace RFC
                 return null;    
             }
 
-
-    
-       
-          
         }
         private  DataTable IRfcTable_To_DataTable(IRfcTable doc, string tableName) {
             DataTable table = new DataTable(tableName);

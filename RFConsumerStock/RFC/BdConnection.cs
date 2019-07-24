@@ -22,14 +22,12 @@ namespace RFC
 
         }
 
-        public void RecibirStock(DataTable dt)
+        public bool RecibirStock(DataTable dt)
         {
             try
             {
-                conn.Open();
-
-
-                SqlCommand cmd = new SqlCommand("delete DocSapStock", conn);
+               conn.Open();
+                        SqlCommand cmd = new SqlCommand("delete DocSapStock", conn);
                 cmd.ExecuteNonQuery();
                 if (conn.State == System.Data.ConnectionState.Open)
                 {
@@ -52,10 +50,12 @@ namespace RFC
 
 
                 }
+                return true;
             }
             catch (Exception e)
             {
                 e.ToString();
+                return false;
             }
             finally {
                 if (conn.State == ConnectionState.Open) {

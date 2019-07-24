@@ -1,0 +1,11 @@
+C:\Users\Adriana\Documents\Proyectos\Github\WCF_REX_SAP\REX_SAP_FORM\REX_SAP_FORM\bin\Debug\REX_SAP_FORM.exe
+C:\Users\Adriana\Documents\Proyectos\Github\WCF_REX_SAP\REX_SAP_FORM\REX_SAP_FORM\bin\Debug\REX_SAP_FORM.exe.config
+C:\Users\Adriana\Documents\Proyectos\Github\WCF_REX_SAP\REX_SAP_FORM\REX_SAP_FORM\bin\Debug\sapnco.dll
+C:\Users\Adriana\Documents\Proyectos\Github\WCF_REX_SAP\REX_SAP_FORM\REX_SAP_FORM\bin\Debug\sapnco_utils.dll
+C:\Users\Adriana\Documents\Proyectos\Github\WCF_REX_SAP\REX_SAP_FORM\REX_SAP_FORM\obj\Debug\REX_SAP_FORM.Form1.resources
+C:\Users\Adriana\Documents\Proyectos\Github\WCF_REX_SAP\REX_SAP_FORM\REX_SAP_FORM\obj\Debug\REX_SAP_FORM.Properties.Resources.resources
+C:\Users\Adriana\Documents\Proyectos\Github\WCF_REX_SAP\REX_SAP_FORM\REX_SAP_FORM\obj\Debug\REX_SAP_FORM.csproj.GenerateResource.cache
+C:\Users\Adriana\Documents\Proyectos\Github\WCF_REX_SAP\REX_SAP_FORM\REX_SAP_FORM\obj\Debug\REX_SAP_FORM.csproj.CoreCompileInputs.cache
+C:\Users\Adriana\Documents\Proyectos\Github\WCF_REX_SAP\REX_SAP_FORM\REX_SAP_FORM\obj\Debug\REX_SAP_FORM.csproj.CopyComplete
+C:\Users\Adriana\Documents\Proyectos\Github\WCF_REX_SAP\REX_SAP_FORM\REX_SAP_FORM\obj\Debug\REX_SAP_FORM.exe
+C:\Users\Adriana\Documents\Proyectos\Github\WCF_REX_SAP\REX_SAP_FORM\REX_SAP_FORM\obj\Debug\REX_SAP_FORM.pdb

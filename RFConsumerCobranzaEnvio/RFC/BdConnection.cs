@@ -21,6 +21,7 @@ namespace RFC
                "connect timeout=2000;");
         }
 
+
         public List<Cobranza> ObtenerCobranzas() {
 
             List<Cobranza> list = new List<Cobranza>();

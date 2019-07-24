@@ -15,10 +15,10 @@ namespace RFConsumer
            bool seEjecuto=false;
            BdConnection bd = new BdConnection();
            RfcInvoke rfcs = new RfcInvoke();
-           List<Cobranza> list = bd.ObtenerCobranzas();
-            if (list != null) {
-                rfcs.
-            }
+          // List<Cobranza> list = bd.ObtenerCobranzas();
+        
+                rfcs.EnviarDatosCobranza(new List<Cobranza>());
+            
         //   List<Pedido> list = bd.ObtenerPedidos();
       //     seEjecuto= rfcs.IngresarPedidos(list);
            Console.Write(seEjecuto);

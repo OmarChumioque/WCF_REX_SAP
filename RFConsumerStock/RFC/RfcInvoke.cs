@@ -22,6 +22,10 @@ namespace RFC
             this.I_BUDAT = I_BUDAT;
         }
 
+        public RfcInvoke()
+        {
+        }
+
 
         public RfcInvoke(string FEC_INI, string FEC_FIN)
         {
@@ -76,9 +80,7 @@ namespace RFC
             {
                 return null;
             }
-
-            
-         
+      
            //  BdConnection bd = new BdConnection();
            //   bd.RecibirStock(table);
 

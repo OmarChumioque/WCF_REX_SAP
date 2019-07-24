@@ -11,7 +11,6 @@ namespace RFC.Model
         private string bstkd;
         private string kunnr;
         private DateTime audat;
-
         private string zterm;
         private string auart;
         private string waerk;
@@ -22,10 +21,15 @@ namespace RFC.Model
         private decimal netpr;
         private string pstyv;
         private string vbeln;
+        private string posnr;
+        private DateTime ketdat;
+        private string vrkme;
+
 
         public Pedido()
         {
         }
+
 
         public string Bstkd { get => bstkd; set => bstkd = value; }
         public string Kunnr { get => kunnr; set => kunnr = value; }
@@ -40,5 +44,8 @@ namespace RFC.Model
         public decimal Netpr { get => netpr; set => netpr = value; }
         public string Pstyv { get => pstyv; set => pstyv = value; }
         public string Vbeln { get => vbeln; set => vbeln = value; }
+        public string Posnr { get => posnr; set => posnr = value; }
+        public DateTime Ketdat { get => ketdat; set => ketdat = value; }
+        public string Vrkme { get => vrkme; set => vrkme = value; }
     }
 }

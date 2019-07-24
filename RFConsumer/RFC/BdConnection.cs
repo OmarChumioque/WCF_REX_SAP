@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace RFC
 {
-    class BdConnection
+    public class BdConnection
     {
         SqlConnection conn;
 
@@ -20,7 +20,7 @@ namespace RFC
 
         }
 
-        public void AgregarMovimientosAlmacen(DataTable dt)
+        public bool AgregarMovimientosAlmacen(DataTable dt)
         {
             try
             {
@@ -45,12 +45,12 @@ namespace RFC
                     stored.CommandType = CommandType.StoredProcedure;
                     stored.ExecuteNonQuery();
                 }
-
+                return true;
             }
             catch (Exception e)
             {
                 e.ToString();
-
+                return false;
             }
             finally {
 

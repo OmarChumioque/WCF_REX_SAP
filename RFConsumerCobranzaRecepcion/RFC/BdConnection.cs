@@ -25,11 +25,11 @@ namespace RFC
             "User Id=rexdb;Password=rexdb2019;" +
             "connect timeout=2000;");    
 
-
+                
         }
 
        
-        public void AgregarDatosCobranza(DataTable dt)
+        public bool AgregarDatosCobranza(DataTable dt)
         {
             try
             {
@@ -62,10 +62,12 @@ namespace RFC
                     stored.CommandType = CommandType.StoredProcedure;
                     stored.ExecuteNonQuery();*/
                 }
+                return true;
             }
             catch (Exception e)
             {
                 e.ToString();
+                return false;
             }
             finally {
                 if (conn.State == ConnectionState.Open) {

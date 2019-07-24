@@ -30,9 +30,10 @@ namespace RFC
             this.iM_FEC_FIN = FEC_FIN;
         }
 
-        public bool IngresarPedidos(List<Pedido> pedidos)
+        public List<DataTable> IngresarPedidos(List<Pedido> pedidos)
         {
-      
+
+            List<DataTable> list = new List<DataTable>();
             RfcConfigParameters rfc = new RfcConfigParameters();
             rfc.Add(RfcConfigParameters.Name, "Desarrollo");
             rfc.Add(RfcConfigParameters.AppServerHost, "10.16.1.30");
@@ -49,6 +50,9 @@ namespace RFC
             try
             {
                 rfcDest = RfcDestinationManager.GetDestination(rfc);
+
+                //     doc.Insert();
+
             }
             catch (Exception e)
             {
@@ -57,48 +61,47 @@ namespace RFC
 
             IRfcFunction function = rfcDest.Repository.CreateFunction("ZSD_REXSAP_008");
             IRfcTable doc = function.GetTable("M_PEDIDOS");
-          
-            //     doc.Insert();
             doc.Insert(pedidos.Count());
-           
+
             for (int i = 0; i <pedidos.Count(); i++)
             {
                 doc.CurrentIndex = i;
-                doc.SetValue("BSTKD", pedidos[i].Bstkd);
-                doc.SetValue("KUNNR", pedidos[i].Kunnr);
-                doc.SetValue("AUDAT", "20190717");//DATE
-                doc.SetValue("ZTERM", pedidos[i].Zterm);
-                doc.SetValue("AUART", pedidos[i].Auart);
-                doc.SetValue("WAERK", pedidos[i].Waerk);
+                doc.SetValue("BSTKD",pedidos[i].Bstkd);
+                doc.SetValue("KUNNR",pedidos[i].Kunnr);
+                doc.SetValue("AUDAT",pedidos[i].Audat);//DATE
+                doc.SetValue("ZTERM",pedidos[i].Zterm);
+                doc.SetValue("AUART",pedidos[i].Auart);
+                doc.SetValue("WAERK",pedidos[i].Waerk);
                 doc.SetValue("NETWR",Math.Round( pedidos[i].Netwr,2));//DECIMAL
-                doc.SetValue("MATNR", pedidos[i].Matnr);
-                doc.SetValue("KWMENG", pedidos[i].Kwmeng);//DECIMAL
+                doc.SetValue("MATNR",pedidos[i].Matnr);
+                doc.SetValue("KWMENG",pedidos[i].Kwmeng);//DECIMAL
                 doc.SetValue("KBETR",Math.Round(pedidos[i].Kbetr,2));//DECIMAL
-                doc.SetValue("PSTYV", pedidos[i].Pstyv);
-                doc.SetValue("NETPR", Math.Round(pedidos[i].Netpr, 2));//DECIMAL
-                //   doc.SetValue("VBELN", pedidos[i].Vbeln);
-                doc.SetValue("KETDAT", "20190717");
+                doc.SetValue("PSTYV",pedidos[i].Pstyv);
+                doc.SetValue("NETPR",Math.Round(pedidos[i].Netpr, 2));//DECIMAL
+                doc.SetValue("VBELN",pedidos[i].Vbeln);
+                doc.SetValue("KETDAT",pedidos[i].Ketdat);
+                doc.SetValue("POSNR",pedidos[i].Posnr);
+                doc.SetValue("VRKME",pedidos[i].Vrkme);
 
             }
             try {
             
                 function.Invoke(rfcDest);
-               
                 IRfcTable doc2 = function.GetTable("TI_PEDIDOSAP");
+                IRfcTable doc3 = function.GetTable("TI_RETURN");
                 DataTable dt2 = IRfcTable_To_DataTable(doc2, "TI_PEDIDOSAP");
-                dt2.Rows.Count.ToString();
-
-                  
-
-
-
-
-                return true;
+                DataTable dt3= IRfcTable_To_DataTable(doc3, "TI_RETURN");
+                list.Add(dt2);
+                list.Add(dt3);
+                
+          //          return true;
             } catch (Exception e) {
                 e.ToString();
-                return false;
+            
+          //      return false;
             }
-          
+
+            return list;
         }
         private  DataTable IRfcTable_To_DataTable(IRfcTable doc, string tableName) {
             DataTable table = new DataTable(tableName);
@@ -130,8 +133,6 @@ namespace RFC
                     {
                       
                             dr[metadata.Name] = row.GetString(metadata.Name);
-               
-                     
                     }
                     if (metadata.DataType.ToString().Equals("BCD"))
                     {

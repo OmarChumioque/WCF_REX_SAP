@@ -27,7 +27,8 @@ namespace RFC
     [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Web.Services.WebServiceBindingAttribute(Name = "ZWS_SD_F_GET_A_RFC_DETAIL", Namespace = "urn:sap-com:document:sap:soap:functions:mc-style")]
+    [System.Web.Services.WebServiceBindingAttribute(Name = "ZWS_SD_F_GET_A_RFC_DETAIL", 
+        Namespace = "urn:sap-com:document:sap:soap:functions:mc-style")]
     public partial class service : System.Web.Services.Protocols.SoapHttpClientProtocol
     {
 
