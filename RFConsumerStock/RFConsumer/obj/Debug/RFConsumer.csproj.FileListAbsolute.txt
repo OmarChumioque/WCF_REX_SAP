@@ -63,3 +63,7 @@ C:\Users\usr_saprex\Documents\Visual Studio 2019\Proyectos\WCF_REX_SAP\RFConsume
 C:\Users\usr_saprex\Documents\Visual Studio 2019\Proyectos\WCF_REX_SAP\RFConsumerStock\RFConsumer\obj\Debug\RFConsumer.csproj.CopyComplete
 C:\Users\usr_saprex\Documents\Visual Studio 2019\Proyectos\WCF_REX_SAP\RFConsumerStock\RFConsumer\obj\Debug\RFConsumer.exe
 C:\Users\usr_saprex\Documents\Visual Studio 2019\Proyectos\WCF_REX_SAP\RFConsumerStock\RFConsumer\obj\Debug\RFConsumer.pdb
+C:\Users\usr_saprex\Documents\Visual Studio 2019\Proyectos\WCF_REX_SAP\RFConsumerStock\RFConsumer\bin\Debug\RFConsumer.exe.manifest
+C:\Users\usr_saprex\Documents\Visual Studio 2019\Proyectos\WCF_REX_SAP\RFConsumerStock\RFConsumer\bin\Debug\RFConsumer.application
+C:\Users\usr_saprex\Documents\Visual Studio 2019\Proyectos\WCF_REX_SAP\RFConsumerStock\RFConsumer\obj\Debug\RFConsumer.exe.manifest
+C:\Users\usr_saprex\Documents\Visual Studio 2019\Proyectos\WCF_REX_SAP\RFConsumerStock\RFConsumer\obj\Debug\RFConsumer.application
