@@ -69,7 +69,7 @@ namespace RFC
 
         }
 
-        internal List<TI_MATNR> GetMaterial()
+        public List<TI_MATNR> GetMaterial()
         {
             List<TI_MATNR> material = new List<TI_MATNR>();
 
