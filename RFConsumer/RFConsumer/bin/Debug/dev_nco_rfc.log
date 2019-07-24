@@ -917,3 +917,55 @@ SAP.Middleware.Connector.RfcAbapMessageException: La clave de aprovisionamiento 
    en SAP.Middleware.Connector.RfcFunction.RfcDeserialize(RfcConnection conn, IRfcIOStream stream)
    en SAP.Middleware.Connector.RfcFunction.RfcCallReceive(RfcConnection conn, IRfcIOStream stream, RFCID rid)
    en SAP.Middleware.Connector.RfcFunction.Invoke(RfcDestination destination)
+**** Trace file opened at 2019-07-23 21:28:42-05:00 (Hora est. Pacífico, Sudamérica)
+	SAP .NET Connector: 3, 0, 1, 0, Working directory: C:\Users\Adriana\Documents\Proyectos\Github\WCF_REX_SAP\RFConsumer\RFConsumer\bin\Debug, Program: C:\Users\Adriana\Documents\Proyectos\Github\WCF_REX_SAP\RFConsumer\RFConsumer\bin\Debug\RFConsumer.exe
+	Hardware: PC with Windows NT, Processor: 4x AMD64 Level 6 (Mod 42 Step 7), Operating system: Microsoft Windows NT 6.2.9200.0, .NET CLR version: 4.0.30319.42000
+ 	SAP release: 720, Kernel release: 720, Kernel patch level: 78
+	Hostname: DESKTOP-M3VR1N6, IP address: 192.168.1.51, IP_v6 address: 
+
+	Default trace level: None
+
+>> Error entry 2019-07-23 21:28:42.866
+Failure to create pool for destination Desarrollo
+SAP.Middleware.Connector.RfcCommunicationException: 
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       partner '10.16.1.30:3300' not reached
+TIME        Tue Jul 23 21:28:42 2019
+RELEASE     720
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      nixxi.cpp
+LINE        3286
+DETAIL      NiPConnect2: 10.16.1.30:3300
+SYSTEM CALL connect
+ERRNO       10060
+ERRNO TEXT  WSAETIMEDOUT: Connection timed out
+COUNTER     1
+
+   en SAP.Middleware.Connector.CpicConnection.ConnectAsClient(Dictionary`2 options)
+   en SAP.Middleware.Connector.RfcConnection.ConnectAsClient(RfcConfigParameters options)
+   en SAP.Middleware.Connector.RfcConnectionPool..ctor(RfcDestination d, Boolean forRepositoryCalls, String uniqueKey)
+>> Error entry 2019-07-23 21:28:42.947
+SAP.Middleware.Connector.RfcCommunicationException: 
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       partner '10.16.1.30:3300' not reached
+TIME        Tue Jul 23 21:28:42 2019
+RELEASE     720
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      nixxi.cpp
+LINE        3286
+DETAIL      NiPConnect2: 10.16.1.30:3300
+SYSTEM CALL connect
+ERRNO       10060
+ERRNO TEXT  WSAETIMEDOUT: Connection timed out
+COUNTER     1
+
+   en SAP.Middleware.Connector.CpicConnection.ConnectAsClient(Dictionary`2 options)
+   en SAP.Middleware.Connector.RfcConnection.ConnectAsClient(RfcConfigParameters options)
+   en SAP.Middleware.Connector.RfcConnectionPool..ctor(RfcDestination d, Boolean forRepositoryCalls, String uniqueKey)
+   en SAP.Middleware.Connector.RfcConnectionManager.GetClient(RfcDestination destination, Boolean forRepository)
+   en SAP.Middleware.Connector.RfcDestination.GetClient(Boolean forRepository)
+   en SAP.Middleware.Connector.RfcDestination.SetAttributeValues(RfcSystemAttributes attribs)
