@@ -18,9 +18,8 @@ namespace REXSAP_WCF.BdConnect
                 "Initial Catalog=Rex;" +
                 "User Id=omarch1409;Password=1409Chumioque;" +
                 "connect timeout=2000;");
+                
              */
-
-
             conn = new SqlConnection("Data Source=172.31.236.221;" +
                "Initial Catalog=rex;" +
                "User Id=rexdb;Password=rexdb2019;" +
@@ -33,7 +32,6 @@ namespace REXSAP_WCF.BdConnect
             try
             {
                 conn.Open();
-
                 for (int i = 0; i < clientes.Count; i++)
                 {
                     Cliente it = clientes[i];
@@ -75,7 +73,7 @@ namespace REXSAP_WCF.BdConnect
                         cmd.Parameters.Add(new SqlParameter("@cubigeo_clie", it.CodUbigeo));
                     }
                     else {
-                        cmd.Parameters.Add(new SqlParameter("@cubigeo_clie",""));
+                        cmd.Parameters.Add(new SqlParameter("@cubigeo_clie", "999999"));
                     }
                     if (it.CodVendedor != null)
                     {
@@ -186,6 +184,7 @@ namespace REXSAP_WCF.BdConnect
                     int a = cmd.ExecuteNonQuery();
                     a.ToString();
                 }
+
             }
             catch (Exception e)
             {
@@ -236,6 +235,8 @@ namespace REXSAP_WCF.BdConnect
                     conn.Close();
                 }
             }
+
+
         }
 
         public void RegistrarMateriales(List<Material> materiales) {
@@ -249,6 +250,10 @@ namespace REXSAP_WCF.BdConnect
                     Material it = materiales[i];
                     if (it != null)
                     {
+                        //reglas de mapeo; Ciro Palomino Almanza; 20190719
+                        //1.- Si la unidad de venta es igual a la unidad de consumo que es la unidad base de SAP
+                        if (it.UnidadVenta == null) it.UnidadVenta = it.UnidadConsumo;
+
                         cmd = new SqlCommand("pWSarticulos", conn);// Procedimiento ingresa o actualiza Material recibido
                         cmd.CommandType = System.Data.CommandType.StoredProcedure;
                         cmd.Parameters.Add(new SqlParameter("@carticulos_id", it.CodMaterial));
@@ -258,6 +263,7 @@ namespace REXSAP_WCF.BdConnect
                         cmd.Parameters.Add(new SqlParameter("@carticulos_estado", it.Estado));
                         cmd.Parameters.Add(new SqlParameter("@cunidad_de_medida_venta", it.UnidadVenta));
                         cmd.Parameters.Add(new SqlParameter("@nfactor_a_venta", it.FactorConversionVenta));
+                        cmd.Parameters.Add(new SqlParameter("@ccategoria_2", it.CCategoria_2));
                         cmd.ExecuteNonQuery();
                     }
                 }

@@ -91,7 +91,7 @@ namespace RFC
             else {
                 return null;
             }
-            Console.ReadLine();
+     
         }
 
         public DataTable IRfcTable_To_DataTable(IRfcTable doc, string tableName) {

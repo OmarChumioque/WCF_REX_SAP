@@ -22,10 +22,6 @@ namespace RFC
             this.I_BUDAT = I_BUDAT;
         }
 
-        public RfcInvoke()
-        {
-        }
-
 
         public RfcInvoke(string FEC_INI, string FEC_FIN)
         {
@@ -56,17 +52,31 @@ namespace RFC
             {
                 rfcDest = RfcDestinationManager.GetDestination(rfc);
                 rfcRep = rfcDest.Repository;
-            }     catch (Exception e) {
+            }
+            catch (Exception e)
+            {
                 e.ToString();
             }
-          //  RfcRepository rfcRep = rfcDest.Repository;
-            //  IRfcFunction function = rfcRep.CreateFunction("ZSD_REXSAP_007");
-            //
-            //
-            //   IRfcFunction function = rfcRep.CreateFunction("ZSD_REXSAP_003");
+
             IRfcFunction function = rfcRep.CreateFunction("ZSD_REXSAP_006");
+
             
-           //function.SetValue("I_BUDAT", I_BUDAT);
+
+            IRfcTable material;
+            material = function.GetTable("TI_MATNR");
+
+            BdConnection bd = new BdConnection();
+
+            foreach (TI_MATNR mat in bd.GetMaterial()) {
+                material.Append();
+                material.SetValue("SIGN", mat.SIGN);
+                material.SetValue("OPTION", mat.OPTION);
+                material.SetValue("LOW", mat.LOW);
+                material.SetValue("HIGH", "");
+            }
+
+
+
             try
             {
                 function.Invoke(rfcDest);
@@ -80,16 +90,11 @@ namespace RFC
             {
                 return null;
             }
-      
-           //  BdConnection bd = new BdConnection();
-           //   bd.RecibirStock(table);
 
-       
-
-            
         }
 
-        private  DataTable IRfcTable_To_DataTable(IRfcTable doc, string tableName) {
+        private DataTable IRfcTable_To_DataTable(IRfcTable doc, string tableName)
+        {
             DataTable table = new DataTable(tableName);
 
             for (int i = 0; i < doc.ElementCount; i++)
@@ -117,10 +122,10 @@ namespace RFC
                     RfcElementMetadata metadata = doc.GetElementMetadata(i);
                     if (metadata.DataType.ToString().Equals("CHAR"))
                     {
-                      
-                            dr[metadata.Name] = row.GetString(metadata.Name);
-               
-                     
+
+                        dr[metadata.Name] = row.GetString(metadata.Name);
+
+
                     }
                     if (metadata.DataType.ToString().Equals("BCD"))
                     {
