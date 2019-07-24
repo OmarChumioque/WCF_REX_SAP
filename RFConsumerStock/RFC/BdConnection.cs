@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RFC.Model;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -12,7 +13,8 @@ namespace RFC
     {
         SqlConnection conn;
 
-        public BdConnection() {
+        public BdConnection()
+        {
 
 
             conn = new SqlConnection("Data Source=172.31.236.221;" +
@@ -26,8 +28,8 @@ namespace RFC
         {
             try
             {
-               conn.Open();
-                        SqlCommand cmd = new SqlCommand("delete DocSapStock", conn);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("delete DocSapStock", conn);
                 cmd.ExecuteNonQuery();
                 if (conn.State == System.Data.ConnectionState.Open)
                 {
@@ -57,16 +59,55 @@ namespace RFC
                 e.ToString();
                 return false;
             }
-            finally {
-                if (conn.State == ConnectionState.Open) {
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
                     conn.Close();
                 }
             }
 
+        }
+
+        public List<TI_MATNR> GetMaterial()
+        {
+            List<TI_MATNR> material = new List<TI_MATNR>();
 
 
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("select right('00000000000000000'+carticulos_id, 18) articulo from _articulos", conn);
+                cmd.ExecuteNonQuery();
 
-        } 
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        material.Add(new TI_MATNR()
+                        {
+                            SIGN = "I",
+                            OPTION = "EQ",
+                            LOW = reader.GetString(0)
+                        });
+                    }
+                }
 
+            }
+            catch (Exception e)
+            {
+                e.ToString();
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+
+            return material;
+
+        }
     }
 }
