@@ -56,3 +56,13 @@ C:\Users\usr_saprex\Documents\Visual Studio 2019\Proyectos\WCF_REX_SAP\RFConsume
 C:\Users\usr_saprex\Documents\Visual Studio 2019\Proyectos\WCF_REX_SAP\RFConsumerStock\RFC\obj\Debug\RFC.csproj.CopyComplete
 C:\Users\usr_saprex\Documents\Visual Studio 2019\Proyectos\WCF_REX_SAP\RFConsumerStock\RFC\obj\Debug\RFC.dll
 C:\Users\usr_saprex\Documents\Visual Studio 2019\Proyectos\WCF_REX_SAP\RFConsumerStock\RFC\obj\Debug\RFC.pdb
+D:\REX\WCF_REX_SAP\RFConsumerStock\RFC\bin\Debug\RFC.dll.config
+D:\REX\WCF_REX_SAP\RFConsumerStock\RFC\bin\Debug\RFC.dll
+D:\REX\WCF_REX_SAP\RFConsumerStock\RFC\bin\Debug\RFC.pdb
+D:\REX\WCF_REX_SAP\RFConsumerStock\RFC\bin\Debug\sapnco.dll
+D:\REX\WCF_REX_SAP\RFConsumerStock\RFC\bin\Debug\sapnco_utils.dll
+D:\REX\WCF_REX_SAP\RFConsumerStock\RFC\obj\Debug\RFC.csprojAssemblyReference.cache
+D:\REX\WCF_REX_SAP\RFConsumerStock\RFC\obj\Debug\RFC.csproj.CoreCompileInputs.cache
+D:\REX\WCF_REX_SAP\RFConsumerStock\RFC\obj\Debug\RFC.csproj.CopyComplete
+D:\REX\WCF_REX_SAP\RFConsumerStock\RFC\obj\Debug\RFC.dll
+D:\REX\WCF_REX_SAP\RFConsumerStock\RFC\obj\Debug\RFC.pdb
