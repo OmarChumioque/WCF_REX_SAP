@@ -76,3 +76,16 @@ C:\Users\usr_saprex\Documents\Visual Studio 2019\Proyectos\WCF_REX_SAP\RFConsume
 C:\Users\usr_saprex\Documents\Visual Studio 2019\Proyectos\WCF_REX_SAP\RFConsumerPedidos\RFConsumer\obj\Debug\RFConsumer.csproj.CopyComplete
 C:\Users\usr_saprex\Documents\Visual Studio 2019\Proyectos\WCF_REX_SAP\RFConsumerPedidos\RFConsumer\obj\Debug\RFConsumer.exe
 C:\Users\usr_saprex\Documents\Visual Studio 2019\Proyectos\WCF_REX_SAP\RFConsumerPedidos\RFConsumer\obj\Debug\RFConsumer.pdb
+D:\REX\WCF_REX_SAP\RFConsumerPedidos\RFConsumer\bin\Debug\RFConsumer.exe.config
+D:\REX\WCF_REX_SAP\RFConsumerPedidos\RFConsumer\bin\Debug\RFConsumer.exe
+D:\REX\WCF_REX_SAP\RFConsumerPedidos\RFConsumer\bin\Debug\RFConsumer.pdb
+D:\REX\WCF_REX_SAP\RFConsumerPedidos\RFConsumer\bin\Debug\RFC.dll
+D:\REX\WCF_REX_SAP\RFConsumerPedidos\RFConsumer\bin\Debug\sapnco.dll
+D:\REX\WCF_REX_SAP\RFConsumerPedidos\RFConsumer\bin\Debug\sapnco_utils.dll
+D:\REX\WCF_REX_SAP\RFConsumerPedidos\RFConsumer\bin\Debug\RFC.pdb
+D:\REX\WCF_REX_SAP\RFConsumerPedidos\RFConsumer\bin\Debug\RFC.dll.config
+D:\REX\WCF_REX_SAP\RFConsumerPedidos\RFConsumer\obj\Debug\RFConsumer.csprojAssemblyReference.cache
+D:\REX\WCF_REX_SAP\RFConsumerPedidos\RFConsumer\obj\Debug\RFConsumer.csproj.CoreCompileInputs.cache
+D:\REX\WCF_REX_SAP\RFConsumerPedidos\RFConsumer\obj\Debug\RFConsumer.csproj.CopyComplete
+D:\REX\WCF_REX_SAP\RFConsumerPedidos\RFConsumer\obj\Debug\RFConsumer.exe
+D:\REX\WCF_REX_SAP\RFConsumerPedidos\RFConsumer\obj\Debug\RFConsumer.pdb
