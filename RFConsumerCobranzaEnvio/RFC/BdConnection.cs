@@ -89,8 +89,9 @@ namespace RFC
             }
             finally
             {
+
                 conn.Close();
-            }
+            } 
 
             return dt;
 
