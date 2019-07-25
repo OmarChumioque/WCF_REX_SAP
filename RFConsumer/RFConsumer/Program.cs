@@ -16,8 +16,7 @@ namespace RFConsumer
             RfcInvoke rfcs = new RfcInvoke("01.01.2016", "01.07.2019");
             rfcs.WriteToFile();
             */
-            string g = DateTime.Now.Date.ToString();
-            g.Count();
+         
             RfcInvoke rfcs = new RfcInvoke();
             BdConnection bd = new BdConnection();
             Console.WriteLine("Recuperando la información.Espere un momento...");
@@ -45,10 +44,6 @@ namespace RFConsumer
                 Console.WriteLine("Hubo un problema al recuperar la información");
             }
         
-
-            //   RfcInvoke rfcs = new RfcInvoke("20190626");
-            //  RfcInvoke rfcs = new RfcInvoke("20190619");
-
 
         }
 

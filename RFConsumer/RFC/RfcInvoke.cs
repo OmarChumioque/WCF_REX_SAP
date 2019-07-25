@@ -67,8 +67,7 @@ namespace RFC
             //   IRfcFunction function = rfcRep.CreateFunction("ZSD_REXSAP_003");
             IRfcFunction function = rfcRep.CreateFunction("ZSD_REXSAP_007");
 
-           
-            function.SetValue("I_BUDAT", DateTime.Now.Date);
+            function.SetValue("I_BUDAT", DateTime.Now.ToString("yyyy-MM-dd"));
             try
             {
                 function.Invoke(rfcDest);
