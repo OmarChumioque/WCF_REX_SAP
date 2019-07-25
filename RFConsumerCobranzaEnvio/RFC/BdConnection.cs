@@ -20,7 +20,7 @@ namespace RFC
                "User Id=rexdb;Password=rexdb2019;" +
                "connect timeout=2000;");
         }
-
+        /*
 
         public List<Cobranza> ObtenerCobranzas() {
 
@@ -28,11 +28,12 @@ namespace RFC
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("pintpedido", conn);
+                SqlCommand cmd = new SqlCommand("sp_sap_requestCobranza", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
+                    
                     Cobranza c = new Cobranza();
                     c.Kunnr = reader["KUNNR"].ToString();
                     c.Bukrs = reader["BUKRS"].ToString();
@@ -67,7 +68,33 @@ namespace RFC
                 return list;
 
         }
+        */
 
+        public DataTable ObtenerCobranzas()
+        {
+
+            DataTable dt = new DataTable(); ;
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("sp_sap_requestCobranza", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataReader reader = cmd.ExecuteReader();
+                dt.Load(reader);
+            }
+            catch (Exception e)
+            {
+                dt = null;
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return dt;
+
+        }
         public List<Pedido> ObtenerPedidos() {
 
             List<Pedido> list = new List<Pedido>();
