@@ -60,7 +60,24 @@ namespace RFC
             {
                 IRfcFunction function = rfcDest.Repository.CreateFunction("ZSD_REXSAP_009");
                 RfcRepository rfcRep = null;
+
+                IRfcTable cliente;
+                cliente = function.GetTable("TI_KUNNR");
+
+                BdConnection bd = new BdConnection();
+
+                foreach (Cliente cli in bd.GetCliente())
+                {
+                    cliente.Append();
+                    cliente.SetValue("SIGN", cli.SIGN);
+                    cliente.SetValue("OPTION", cli.OPTION);
+                    cliente.SetValue("LOW", cli.LOW);
+                    cliente.SetValue("HIGH", "");
+                }
+
+
                 function.Invoke(rfcDest);
+
                 IRfcTable doc = function.GetTable("IT_DOCSAPREX");
                 DataTable table = IRfcTable_To_DataTable(doc, "IT_DOCSAPREX");
                 return table;

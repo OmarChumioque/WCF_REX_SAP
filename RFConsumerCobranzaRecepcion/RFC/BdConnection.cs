@@ -58,9 +58,10 @@ namespace RFC
                     bulk.ColumnMappings.Add("BLART", "BLART");
                     
                     bulk.WriteToServer(dt);
-                   /* SqlCommand stored = new SqlCommand("pIntmovalmacenstock", conn);
+
+                    SqlCommand stored = new SqlCommand("sp_sap_receiverCobranza", conn);
                     stored.CommandType = CommandType.StoredProcedure;
-                    stored.ExecuteNonQuery();*/
+                    stored.ExecuteNonQuery();
                 }
                 return true;
             }
@@ -75,10 +76,47 @@ namespace RFC
                 }
             }
 
+        }
+
+        public List<Cliente> GetCliente()
+        {
+            List<Cliente> material = new List<Cliente>();
 
 
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("select right('00000000'+ccod_clie, 10) cliente from _cliente", conn);
+                cmd.ExecuteNonQuery();
 
-        } 
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        material.Add(new Cliente()
+                        {
+                            SIGN = "I",
+                            OPTION = "EQ",
+                            LOW = reader.GetString(0)
+                        });
+                    }
+                }
+
+            }
+            catch (Exception e)
+            {
+                e.ToString();
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+
+            return material;
+        }
 
     }
 }

@@ -18,6 +18,8 @@ namespace RFConsumer
           Console.WriteLine("Recuperando la información.Espere un momento...");
           DataTable tableCobranza= rfcs.ObtenerDatosCobranza();
             if (tableCobranza != null)
+
+                
             {
                 Console.WriteLine("Se recupero " + tableCobranza.Rows.Count.ToString() + "  registros");
                 Console.WriteLine("Se guardara la informacion en la base de datos.Espere un momento...");
@@ -33,8 +35,6 @@ namespace RFConsumer
             else {
                 Console.WriteLine("No se recupero informacion");
             }
-          //  Console.Write(seEjecuto);
-          Console.ReadLine();
 
         }
 
