@@ -130,9 +130,9 @@ namespace RFC
                     bulk.ColumnMappings.Add("BSTKD", "BSTKD");
                     bulk.ColumnMappings.Add("VBELN", "VBELN");
                     bulk.WriteToServer(table);
-                   /* SqlCommand stored = new SqlCommand("pintPedidoResult", conn);
+                    SqlCommand stored = new SqlCommand("sp_sap_OUTPedido", conn);
                     stored.CommandType = CommandType.StoredProcedure;
-                    stored.ExecuteNonQuery();*/
+                    stored.ExecuteNonQuery();
                 }
 
             }
