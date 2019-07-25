@@ -8,7 +8,7 @@ namespace RFC.Model
 {
     public class Cobranza
     {
-
+        private string incob;
         private string kunnr;
         private string bukrs;
         private string belnr;

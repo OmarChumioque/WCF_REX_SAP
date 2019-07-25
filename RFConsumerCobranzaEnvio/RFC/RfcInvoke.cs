@@ -30,7 +30,7 @@ namespace RFC
             this.iM_FEC_FIN = FEC_FIN;
         }
 
-        public bool EnviarDatosCobranza(List<Cobranza> cobranzas)
+        public bool EnviarDatosCobranza(DataTable dt)
         {
             RfcConfigParameters rfc = new RfcConfigParameters();
             rfc.Add(RfcConfigParameters.Name, "Desarrollo");
@@ -55,30 +55,15 @@ namespace RFC
 
             IRfcFunction function = rfcDest.Repository.CreateFunction("ZSD_REXSAP_010");// A la espera del nombre de la funcio
             IRfcTable doc = function.GetTable("TI_DOCREXSAP");//A la espera del nombre de la tabla
-              doc.Insert();
-            doc.Insert(cobranzas.Count());
-           
-            for (int i = 0; i <cobranzas.Count(); i++)
-            {
-                doc.CurrentIndex = i;
+            foreach (DataRow row in dt.Rows) {
+                doc.Append();
+                for (int i = 0; i < dt.Columns.Count; i++) {
+                     doc.SetValue(dt.Columns[i].ColumnName, row[dt.Columns[i].ColumnName]);
 
-                doc.SetValue("KUNNR",cobranzas[i].Kunnr);
-                doc.SetValue("BUKRS",cobranzas[i].Bukrs);
-                doc.SetValue("BELNR",cobranzas[i].Belnr);
-                doc.SetValue("GJAHR",cobranzas[i].Gjahr);
-                doc.SetValue("BUDAT",cobranzas[i].Budat);
-                doc.SetValue("BUZEI",cobranzas[i].Buzei);
-                doc.SetValue("ZUONR",cobranzas[i].Zuonr);
-                doc.SetValue("XBLNR",cobranzas[i].Xblnr);
-                doc.SetValue("BLART",cobranzas[i].Blart);
-                doc.SetValue("SHKZG",cobranzas[i].Shkzg);
-                doc.SetValue("WAERS",cobranzas[i].Waers);
-                doc.SetValue("DMBTR",cobranzas[i].Dmbtr);
-                doc.SetValue("WRBTR",cobranzas[i].Wrbtr);
-                doc.SetValue("ZFBDT",cobranzas[i].Zfbdt);
-                doc.SetValue("DATS",cobranzas[i].Dats);
-                doc.SetValue("UZEIT",cobranzas[i].Uzeit);
+                }
             }
+
+         
             try {
                 function.Invoke(rfcDest);
                 return true;

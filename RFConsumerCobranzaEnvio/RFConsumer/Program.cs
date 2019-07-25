@@ -2,6 +2,7 @@
 using RFC.Model;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,9 +16,9 @@ namespace RFConsumer
            bool seEjecuto=false;
            BdConnection bd = new BdConnection();
            RfcInvoke rfcs = new RfcInvoke();
-          // List<Cobranza> list = bd.ObtenerCobranzas();
-        
-                rfcs.EnviarDatosCobranza(new List<Cobranza>());
+           DataTable dt= bd.ObtenerCobranzas();
+    
+           rfcs.EnviarDatosCobranza(dt);
             
         //   List<Pedido> list = bd.ObtenerPedidos();
       //     seEjecuto= rfcs.IngresarPedidos(list);
