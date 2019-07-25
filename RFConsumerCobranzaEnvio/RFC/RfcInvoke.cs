@@ -55,10 +55,23 @@ namespace RFC
 
             IRfcFunction function = rfcDest.Repository.CreateFunction("ZSD_REXSAP_010");// A la espera del nombre de la funcio
             IRfcTable doc = function.GetTable("TI_DOCREXSAP");//A la espera del nombre de la tabla
+            RfcStructureMetadata  metadata=  doc.Metadata.LineType;
+         
+            List<string> nombresColumna = new List<string>();
+         
+
+            for (int i = 0; i < metadata.FieldCount; i++) {
+                nombresColumna.Add(doc.GetElementMetadata(i).Name);
+            }
             foreach (DataRow row in dt.Rows) {
                 doc.Append();
+
                 for (int i = 0; i < dt.Columns.Count; i++) {
-                     doc.SetValue(dt.Columns[i].ColumnName, row[dt.Columns[i].ColumnName]);
+
+                    if (ExisteNombreColumna(nombresColumna, dt.Columns[i].ColumnName)) {
+                        doc.SetValue(dt.Columns[i].ColumnName, row[dt.Columns[i].ColumnName]);
+
+                    }
 
                 }
             }
@@ -73,6 +86,15 @@ namespace RFC
           
         }
 
+        private bool ExisteNombreColumna(List<string> columnas,string nombreBuscar) {
+
+            for (int i = 0; i < columnas.Count; i++) {
+                if (columnas[i].Equals(nombreBuscar)) {
+                   return true;
+                 }
+            }
+            return false;
+        }
 
         public DataTable ObtenerDatosCobranza()
         {
