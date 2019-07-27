@@ -64,6 +64,7 @@ namespace RFC
                 nombresColumna.Add(doc.GetElementMetadata(i).Name);
             }
             foreach (DataRow row in dt.Rows) {
+
                 doc.Append();
 
                 for (int i = 0; i < dt.Columns.Count; i++) {
@@ -74,6 +75,9 @@ namespace RFC
                     }
 
                 }
+                //Console.WriteLine(row[dt.Columns[0].ColumnName]);
+
+                
             }
 
          
