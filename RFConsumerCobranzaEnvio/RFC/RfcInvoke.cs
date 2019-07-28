@@ -3,6 +3,7 @@ using SAP.Middleware.Connector;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -13,31 +14,18 @@ namespace RFC
     public class RfcInvoke
     {
 
-        private string iM_FEC_INI;
-        private string iM_FEC_FIN;
-        private string I_BUDAT;
-
-        public RfcInvoke(string I_BUDAT)
-        {
-            this.I_BUDAT = I_BUDAT;
-        }
 
         public RfcInvoke() {
-        }
-        public RfcInvoke(string FEC_INI, string FEC_FIN)
-        {
-            this.iM_FEC_INI = FEC_INI;
-            this.iM_FEC_FIN = FEC_FIN;
         }
 
         public bool EnviarDatosCobranza(DataTable dt)
         {
             RfcConfigParameters rfc = new RfcConfigParameters();
-            rfc.Add(RfcConfigParameters.Name, "Desarrollo");
-            rfc.Add(RfcConfigParameters.AppServerHost, "10.16.1.30");
-            rfc.Add(RfcConfigParameters.Client, "600");
-            rfc.Add(RfcConfigParameters.User, "REXSAP2");
-            rfc.Add(RfcConfigParameters.Password, "Rexsap01");
+            rfc.Add(RfcConfigParameters.Name, ConfigurationManager.AppSettings["Name"]);
+            rfc.Add(RfcConfigParameters.AppServerHost, ConfigurationManager.AppSettings["AppServerHost"]);
+            rfc.Add(RfcConfigParameters.Client, ConfigurationManager.AppSettings["Client"]);
+            rfc.Add(RfcConfigParameters.User, ConfigurationManager.AppSettings["User"]);
+            rfc.Add(RfcConfigParameters.Password, ConfigurationManager.AppSettings["Password"]);
             rfc.Add(RfcConfigParameters.SystemNumber, "00");
             rfc.Add(RfcConfigParameters.Language, "ES");
             rfc.Add(RfcConfigParameters.PoolSize, "5");
@@ -75,8 +63,6 @@ namespace RFC
                     }
 
                 }
-                //Console.WriteLine(row[dt.Columns[0].ColumnName]);
-
                 
             }
 
@@ -100,47 +86,7 @@ namespace RFC
             return false;
         }
 
-        public DataTable ObtenerDatosCobranza()
-        {
-
-            RfcConfigParameters rfc = new RfcConfigParameters();
-            rfc.Add(RfcConfigParameters.Name, "Desarrollo");
-            rfc.Add(RfcConfigParameters.AppServerHost, "10.16.1.30");
-            rfc.Add(RfcConfigParameters.Client, "600");
-            rfc.Add(RfcConfigParameters.User, "REXSAP2");
-            rfc.Add(RfcConfigParameters.Password, "Rexsap01");
-            rfc.Add(RfcConfigParameters.SystemNumber, "00");
-            rfc.Add(RfcConfigParameters.Language, "ES");
-            rfc.Add(RfcConfigParameters.PoolSize, "5");
-            rfc.Add(RfcConfigParameters.MaxPoolSize, "100");
-            rfc.Add(RfcConfigParameters.IdleTimeout, "900");
-            RfcDestination rfcDest = null;
-
-
-            try
-            {
-                rfcDest = RfcDestinationManager.GetDestination(rfc);
-            }
-            catch (Exception e)
-            {
-                e.ToString();
-            }
-
-            try
-            {
-                IRfcFunction function = rfcDest.Repository.CreateFunction("ZSD_REXSAP_009");
-                RfcRepository rfcRep = null;
-                function.Invoke(rfcDest);
-                IRfcTable doc = function.GetTable("IT_DOCSAPREX");
-                DataTable table = IRfcTable_To_DataTable(doc, "IT_DOCSAPREX");
-                return table;
-            }
-            catch (RfcBaseException e)
-            {
-                return null;
-            }
-
-        }
+      
         private  DataTable IRfcTable_To_DataTable(IRfcTable doc, string tableName) {
             DataTable table = new DataTable(tableName);
 

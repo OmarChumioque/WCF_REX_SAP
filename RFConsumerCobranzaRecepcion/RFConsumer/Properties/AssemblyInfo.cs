@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // La información general de un ensamblado se controla mediante el siguiente 
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
 // asociada con un ensamblado.
-[assembly: AssemblyTitle("RFConsumer")]
+[assembly: AssemblyTitle("RFC_IN_Cobranza")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("RFConsumer")]
-[assembly: AssemblyCopyright("Copyright ©  2019")]
+[assembly: AssemblyProduct("RFC_IN_Cobranza")]
+[assembly: AssemblyCopyright("Copyright ©  2019 Yichang")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
