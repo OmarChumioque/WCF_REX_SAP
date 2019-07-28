@@ -35,7 +35,7 @@ namespace REXSAP_WCF.BdConnect
                 for (int i = 0; i < clientes.Count; i++)
                 {
                     Cliente it = clientes[i];
-                    cmd = new SqlCommand("pws_cliente", conn);// Procedimiento ingresa o actualiza cliente recibido
+                    cmd = new SqlCommand("sp_sap_INCliente", conn);// Procedimiento ingresa o actualiza cliente recibido
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
                     if (it.Codigo != null)
                     {
@@ -90,12 +90,12 @@ namespace REXSAP_WCF.BdConnect
                     else {
                         cmd.Parameters.Add(new SqlParameter("@cid_grupclie",""));
                     }
-                    if (it.Estado != null)
+                    if (it.Estado == "X")
                     {
-                        cmd.Parameters.Add(new SqlParameter("@cid_stat_clie", it.Estado));
+                        cmd.Parameters.Add(new SqlParameter("@cid_stat_clie", "2"));
                     }
                     else {
-                        cmd.Parameters.Add(new SqlParameter("@cid_stat_clie", ""));
+                        cmd.Parameters.Add(new SqlParameter("@cid_stat_clie", "1"));
                     }
 
                     if (it.CodFormaPago != null)
@@ -180,7 +180,16 @@ namespace REXSAP_WCF.BdConnect
                     else {
                         cmd.Parameters.Add(new SqlParameter("@mdire_env", ""));
                     }
-                  
+
+                    if (it.Ctipo_negocio != null)
+                    {
+                        cmd.Parameters.Add(new SqlParameter("@ctipo_negocio", it.Ctipo_negocio));
+                    }
+                    else
+                    {
+                        cmd.Parameters.Add(new SqlParameter("@ctipo_negocio", ""));
+                    }
+
                     int a = cmd.ExecuteNonQuery();
                     a.ToString();
                 }
