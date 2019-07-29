@@ -1,6 +1,7 @@
 ﻿using REXSAP_WCF.Model;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -13,17 +14,7 @@ namespace REXSAP_WCF.BdConnect
 
         public BdConnection()
         {
-            /*
-            conn = new SqlConnection("Data Source=185.144.157.97;" +
-                "Initial Catalog=Rex;" +
-                "User Id=omarch1409;Password=1409Chumioque;" +
-                "connect timeout=2000;");
-                
-             */
-            conn = new SqlConnection("Data Source=172.31.236.221;" +
-               "Initial Catalog=rex;" +
-               "User Id=rexdb;Password=rexdb2019;" +
-               "connect timeout=2000;");
+            conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Connexion"].ConnectionString);
 
         }
 
@@ -263,7 +254,7 @@ namespace REXSAP_WCF.BdConnect
                         //1.- Si la unidad de venta es igual a la unidad de consumo que es la unidad base de SAP
                         if (it.UnidadVenta == null) it.UnidadVenta = it.UnidadConsumo;
 
-                        cmd = new SqlCommand("pWSarticulos", conn);// Procedimiento ingresa o actualiza Material recibido
+                        cmd = new SqlCommand("sp_sap_inarticulos", conn);// Procedimiento ingresa o actualiza Material recibido
                         cmd.CommandType = System.Data.CommandType.StoredProcedure;
                         cmd.Parameters.Add(new SqlParameter("@carticulos_id", it.CodMaterial));
                         cmd.Parameters.Add(new SqlParameter("@carticulos_nombre", it.Nombre));
