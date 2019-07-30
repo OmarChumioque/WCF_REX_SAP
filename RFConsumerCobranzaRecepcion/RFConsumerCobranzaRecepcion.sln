@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29020.237
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RFConsumer", "RFConsumer\RFConsumer.csproj", "{2E59D5B8-6858-4708-8259-846DC9546AA5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RFConsumerCobranzaRecepcion", "RFConsumer\RFConsumerCobranzaRecepcion.csproj", "{2E59D5B8-6858-4708-8259-846DC9546AA5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RFC", "RFC\RFC.csproj", "{8F168848-1FDE-4D92-964E-5BC2DE6FA4DD}"
 EndProject
