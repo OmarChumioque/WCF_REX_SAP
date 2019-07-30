@@ -8,37 +8,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.Configuration;
+
 namespace RFC
 {
     public class RfcInvoke
     {
 
-        private string iM_FEC_INI;
-        private string iM_FEC_FIN;
-        private string I_BUDAT;
-
-        public RfcInvoke(string I_BUDAT)
-        {
-            this.I_BUDAT = I_BUDAT;
-        }
 
         public RfcInvoke() {
-        }
-        public RfcInvoke(string FEC_INI, string FEC_FIN)
-        {
-            this.iM_FEC_INI = FEC_INI;
-            this.iM_FEC_FIN = FEC_FIN;
         }
 
         public DataTable ObtenerDatosCobranza()
         {
 
             RfcConfigParameters rfc = new RfcConfigParameters();
-            rfc.Add(RfcConfigParameters.Name, "Desarrollo");
-            rfc.Add(RfcConfigParameters.AppServerHost, "10.16.1.30");
-            rfc.Add(RfcConfigParameters.Client, "600");
-            rfc.Add(RfcConfigParameters.User, "REXSAP2");
-            rfc.Add(RfcConfigParameters.Password, "Rexsap01");
+            rfc.Add(RfcConfigParameters.Name, ConfigurationManager.AppSettings["Name"]);
+            rfc.Add(RfcConfigParameters.AppServerHost, ConfigurationManager.AppSettings["AppServerHost"]);
+            rfc.Add(RfcConfigParameters.Client, ConfigurationManager.AppSettings["Client"]);
+            rfc.Add(RfcConfigParameters.User, ConfigurationManager.AppSettings["User"]);
+            rfc.Add(RfcConfigParameters.Password, ConfigurationManager.AppSettings["Password"]);
             rfc.Add(RfcConfigParameters.SystemNumber, "00");
             rfc.Add(RfcConfigParameters.Language, "ES");
             rfc.Add(RfcConfigParameters.PoolSize, "5");
@@ -84,10 +73,12 @@ namespace RFC
             }
             catch (RfcBaseException e)
             {
+                e.ToString();
                 return null;    
             }
 
         }
+
         private  DataTable IRfcTable_To_DataTable(IRfcTable doc, string tableName) {
             DataTable table = new DataTable(tableName);
 

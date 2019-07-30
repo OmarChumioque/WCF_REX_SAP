@@ -39,6 +39,7 @@
       <HintPath>C:\Users\ciro_palomino\source\repos\ConsoleApp1\packages\sapnco3.x64.3.0.2.0\lib\sapnco_utils.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Runtime.Serialization" />

@@ -6,14 +6,14 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{2E59D5B8-6858-4708-8259-846DC9546AA5}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>RFC_IN_Cobranza</RootNamespace>
-    <AssemblyName>RFC_IN_Cobranza</AssemblyName>
+    <RootNamespace>RFCPedidos</RootNamespace>
+    <AssemblyName>RFCPedidos</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>D:\REX\Servicios\InCobranza\</PublishUrl>
+    <PublishUrl>D:\servicios\RFCPedidos\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -23,7 +23,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>5</ApplicationRevision>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>11</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -49,7 +50,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>50080671B630EAF1C84BEB94D34E1E67162A1497</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>E7CC52C4A6B9CA722B2ABA056FA3E49ACC33FEBF</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>RFConsumer_TemporaryKey.pfx</ManifestKeyFile>
@@ -66,7 +67,6 @@
   <PropertyGroup>
     <ApplicationIcon>rexsap.ico</ApplicationIcon>
   </PropertyGroup>
-  <PropertyGroup />
   <PropertyGroup>
     <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
@@ -93,6 +93,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="RFConsumer_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RFC\RFC.csproj">

@@ -1,6 +1,7 @@
 ﻿using RFC.Model;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -15,60 +16,9 @@ namespace RFC
 
         public BdConnection() {
 
-            conn = new SqlConnection("Data Source=172.31.236.221;" +
-               "Initial Catalog=rex;" +
-               "User Id=rexdb;Password=rexdb2019;" +
-               "connect timeout=2000;");
+            conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Connexion"].ConnectionString);
         }
-        /*
 
-        public List<Cobranza> ObtenerCobranzas() {
-
-            List<Cobranza> list = new List<Cobranza>();
-            try
-            {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("sp_sap_requestCobranza", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    
-                    Cobranza c = new Cobranza();
-                    c.Kunnr = reader["KUNNR"].ToString();
-                    c.Bukrs = reader["BUKRS"].ToString();
-                    c.Belnr = reader["BELNR_D"].ToString();
-                    c.Gjahr = Convert.ToInt32(reader["GJAHR"]);
-                    c.Buzei = Convert.ToInt32(reader["BUZEI"]);
-                    c.Budat = Convert.ToDateTime( reader["BUDAT"]);
-                    c.Zuonr =Convert.ToString( reader["ZUONR"]);
-                    c.Xblnr = Convert.ToString(reader["XBLNR"]);
-                    c.Blart = Convert.ToString(reader["BLART"]);
-                    c.Shkzg = Convert.ToString(reader["SHKZG"]);
-                    c.Waers = Convert.ToString(reader["WAERS"]);
-                    c.Dmbtr = Convert.ToDecimal(reader["DMBTR"]);
-                    c.Wrbtr= Convert.ToDecimal(reader["WRBTR"]);
-                    c.Zfbdt=Convert.ToDateTime(reader["ZFBDT"]);
-                    c.Dats = Convert.ToDateTime(reader["DATS"]);
-                    c.Uzeit = Convert.ToString(reader["UZEIT"]);
-                    list.Add(c);
-
-                }
-
-            }
-            catch (Exception e)
-            {
-                list = null;
-
-            }
-            finally {
-                conn.Close();
-            }
-
-                return list;
-
-        }
-        */
 
         public DataTable ObtenerCobranzas()
         {

@@ -27,6 +27,7 @@ namespace REXSAP_WCF.Model
         private string nombreComercialNegocio;
         private string codUbigeoEnv;
         private string direccionEntregaPedido;
+        private string ctipo_negocio;
 
         public Cliente()
         {
@@ -48,6 +49,7 @@ namespace REXSAP_WCF.Model
             nombreComercialNegocio = "";
             codUbigeoEnv = "";
             direccionEntregaPedido = "";
+            ctipo_negocio = "";
 
         }
 
@@ -87,5 +89,8 @@ namespace REXSAP_WCF.Model
         public string CodUbigeoEnv { get => codUbigeoEnv; set => codUbigeoEnv = value; }
         [DataMember(Name = "STREET")]
         public string DireccionEntregaPedido { get => direccionEntregaPedido; set => direccionEntregaPedido = value; }
+
+        [DataMember(Name = "KDGRP")]
+        public string Ctipo_negocio { get => ctipo_negocio; set => ctipo_negocio = value; }
     }
 }

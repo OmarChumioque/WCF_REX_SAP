@@ -1,6 +1,7 @@
 ﻿using REXSAP_WCF.Model;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -13,17 +14,7 @@ namespace REXSAP_WCF.BdConnect
 
         public BdConnection()
         {
-            /*
-            conn = new SqlConnection("Data Source=185.144.157.97;" +
-                "Initial Catalog=Rex;" +
-                "User Id=omarch1409;Password=1409Chumioque;" +
-                "connect timeout=2000;");
-                
-             */
-            conn = new SqlConnection("Data Source=172.31.236.221;" +
-               "Initial Catalog=rex;" +
-               "User Id=rexdb;Password=rexdb2019;" +
-               "connect timeout=2000;");
+            conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Connexion"].ConnectionString);
 
         }
 
@@ -35,7 +26,7 @@ namespace REXSAP_WCF.BdConnect
                 for (int i = 0; i < clientes.Count; i++)
                 {
                     Cliente it = clientes[i];
-                    cmd = new SqlCommand("pws_cliente", conn);// Procedimiento ingresa o actualiza cliente recibido
+                    cmd = new SqlCommand("sp_sap_INCliente", conn);// Procedimiento ingresa o actualiza cliente recibido
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
                     if (it.Codigo != null)
                     {
@@ -90,12 +81,12 @@ namespace REXSAP_WCF.BdConnect
                     else {
                         cmd.Parameters.Add(new SqlParameter("@cid_grupclie",""));
                     }
-                    if (it.Estado != null)
+                    if (it.Estado == "X")
                     {
-                        cmd.Parameters.Add(new SqlParameter("@cid_stat_clie", it.Estado));
+                        cmd.Parameters.Add(new SqlParameter("@cid_stat_clie", "2"));
                     }
                     else {
-                        cmd.Parameters.Add(new SqlParameter("@cid_stat_clie", ""));
+                        cmd.Parameters.Add(new SqlParameter("@cid_stat_clie", "1"));
                     }
 
                     if (it.CodFormaPago != null)
@@ -180,7 +171,16 @@ namespace REXSAP_WCF.BdConnect
                     else {
                         cmd.Parameters.Add(new SqlParameter("@mdire_env", ""));
                     }
-                  
+
+                    if (it.Ctipo_negocio != null)
+                    {
+                        cmd.Parameters.Add(new SqlParameter("@ctipo_negocio", it.Ctipo_negocio));
+                    }
+                    else
+                    {
+                        cmd.Parameters.Add(new SqlParameter("@ctipo_negocio", ""));
+                    }
+
                     int a = cmd.ExecuteNonQuery();
                     a.ToString();
                 }
@@ -254,7 +254,7 @@ namespace REXSAP_WCF.BdConnect
                         //1.- Si la unidad de venta es igual a la unidad de consumo que es la unidad base de SAP
                         if (it.UnidadVenta == null) it.UnidadVenta = it.UnidadConsumo;
 
-                        cmd = new SqlCommand("pWSarticulos", conn);// Procedimiento ingresa o actualiza Material recibido
+                        cmd = new SqlCommand("sp_sap_inarticulos", conn);// Procedimiento ingresa o actualiza Material recibido
                         cmd.CommandType = System.Data.CommandType.StoredProcedure;
                         cmd.Parameters.Add(new SqlParameter("@carticulos_id", it.CodMaterial));
                         cmd.Parameters.Add(new SqlParameter("@carticulos_nombre", it.Nombre));
