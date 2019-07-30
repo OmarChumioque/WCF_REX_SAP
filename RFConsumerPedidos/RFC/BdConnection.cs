@@ -1,6 +1,7 @@
 ﻿using RFC.Model;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -13,23 +14,15 @@ namespace RFC
     {
         SqlConnection conn;
 
-        public BdConnection() {
+        public BdConnection()
+        {
 
-      
-         conn = new SqlConnection("Data Source=172.31.236.221;" +
-                        "Initial Catalog=rex;" +
-                        "User Id=rexdb;Password=rexdb2019;" +
-                        "connect timeout=2000;");
-            /*
-               conn = new SqlConnection("Data Source=185.144.157.97;" +
-            "Initial Catalog=rex;" +
-            "User Id=omarch1409;Password=1409Chumioque;" +
-            "connect timeout=2000;"); */
-
+            conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Connexion"].ConnectionString);
 
         }
 
-        public List<Pedido> ObtenerPedidos() {
+        public List<Pedido> ObtenerPedidos()
+        {
 
             List<Pedido> list = new List<Pedido>();
             try
@@ -44,7 +37,7 @@ namespace RFC
                     Pedido p = new Pedido();
                     p.Bstkd = reader["BSTKD"].ToString();
                     p.Kunnr = reader["KUNNR"].ToString();
-                    p.Audat =Convert.ToDateTime(reader["AUDAT"]);
+                    p.Audat = Convert.ToDateTime(reader["AUDAT"]);
                     p.Zterm = reader["ZTERM"].ToString();
                     p.Auart = reader["AUART"].ToString();
                     p.Waerk = reader["WAERK"].ToString();
@@ -55,7 +48,7 @@ namespace RFC
                     p.Pstyv = reader["PSTYV"].ToString();
                     p.Vbeln = reader["VBELN"].ToString();
                     p.Posnr = reader["POSNR"].ToString();
-                    p.Ketdat =Convert.ToDateTime( reader["KETDAT"]);
+                    p.Ketdat = Convert.ToDateTime(reader["KETDAT"]);
                     p.Vrkme = reader["VRKME"].ToString();
                     list.Add(p);
                 }
@@ -66,7 +59,8 @@ namespace RFC
                 e.ToString();
                 list = new List<Pedido>();
             }
-            finally {
+            finally
+            {
 
                 conn.Close();
 
@@ -103,8 +97,10 @@ namespace RFC
             {
                 e.ToString();
             }
-            finally {
-                if (conn.State == ConnectionState.Open) {
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
                     conn.Close();
                 }
             }
@@ -113,10 +109,11 @@ namespace RFC
 
 
         }
-        
-        
-        
-        public void ResultadoPedidos(DataTable table) {
+
+
+
+        public void ResultadoPedidos(DataTable table)
+        {
             try
             {
 
@@ -140,7 +137,8 @@ namespace RFC
             {
                 e.ToString();
             }
-            finally {
+            finally
+            {
 
                 conn.Close();
             }
@@ -148,15 +146,17 @@ namespace RFC
         }
 
 
-        public void MensajesResultado(DataTable table) {
+        public void MensajesResultado(DataTable table)
+        {
 
             try
             {
 
                 conn.Open();
-                /*
-                SqlCommand cmd = new SqlCommand("delete DocSapPedidos", conn);
-                cmd.ExecuteNonQuery();*/
+
+                SqlCommand cmd = new SqlCommand("delete sap_cab_Error", conn);
+                cmd.ExecuteNonQuery();
+
                 if (conn.State == System.Data.ConnectionState.Open)
                 {
                     SqlBulkCopy bulk = new SqlBulkCopy(conn);
@@ -166,9 +166,10 @@ namespace RFC
                     bulk.ColumnMappings.Add("KUNNR", "KUNNR");
                     bulk.ColumnMappings.Add("MESSAGE", "MESSAGE");
                     bulk.WriteToServer(table);
-                    /* SqlCommand stored = new SqlCommand("pintPedidoResult", conn);
-                     stored.CommandType = CommandType.StoredProcedure;
-                     stored.ExecuteNonQuery();*/
+
+                    SqlCommand stored = new SqlCommand("sp_sap_OUTpedidoError", conn);
+                    stored.CommandType = CommandType.StoredProcedure;
+                    stored.ExecuteNonQuery();
                 }
 
             }
