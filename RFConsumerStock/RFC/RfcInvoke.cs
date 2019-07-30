@@ -3,6 +3,7 @@ using SAP.Middleware.Connector;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -34,11 +35,11 @@ namespace RFC
             DataTable dt = new DataTable("");
 
             RfcConfigParameters rfc = new RfcConfigParameters();
-            rfc.Add(RfcConfigParameters.Name, "Desarrollo");
-            rfc.Add(RfcConfigParameters.AppServerHost, "10.16.1.30");
-            rfc.Add(RfcConfigParameters.Client, "600");
-            rfc.Add(RfcConfigParameters.User, "REXSAP2");
-            rfc.Add(RfcConfigParameters.Password, "Rexsap01");
+            rfc.Add(RfcConfigParameters.Name, ConfigurationManager.AppSettings["Name"]);
+            rfc.Add(RfcConfigParameters.AppServerHost, ConfigurationManager.AppSettings["AppServerHost"]);
+            rfc.Add(RfcConfigParameters.Client, ConfigurationManager.AppSettings["Client"]);
+            rfc.Add(RfcConfigParameters.User, ConfigurationManager.AppSettings["User"]);
+            rfc.Add(RfcConfigParameters.Password, ConfigurationManager.AppSettings["Password"]);
             rfc.Add(RfcConfigParameters.SystemNumber, "00");
             rfc.Add(RfcConfigParameters.Language, "ES");
             rfc.Add(RfcConfigParameters.PoolSize, "5");

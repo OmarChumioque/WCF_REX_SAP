@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -14,9 +15,7 @@ namespace RFC
 
         public BdConnection() {
 
-            conn = new SqlConnection("Data Source=172.31.236.221;" +
-               "Initial Catalog=rex;"+"User Id=rexdb;Password=rexdb2019;" +
-               "connect timeout=2000;");
+            conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Connexion"].ConnectionString);
 
         }
 
