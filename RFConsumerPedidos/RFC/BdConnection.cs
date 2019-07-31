@@ -45,6 +45,7 @@ namespace RFC
                     p.Matnr = reader["MATNR"].ToString();
                     p.Kwmeng = Convert.ToDecimal(reader["KWMENG"].ToString());
                     p.Netpr = Convert.ToDecimal(reader["NETPR"].ToString());
+                    p.Kbetr = Convert.ToDecimal(reader["KBETR"].ToString());
                     p.Pstyv = reader["PSTYV"].ToString();
                     p.Vbeln = reader["VBELN"].ToString();
                     p.Posnr = reader["POSNR"].ToString();

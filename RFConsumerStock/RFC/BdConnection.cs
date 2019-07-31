@@ -42,7 +42,7 @@ namespace RFC
                     bulk.WriteToServer(dt);
 
 
-                    SqlCommand stored = new SqlCommand("pIntmovalmacenstock", conn);
+                    SqlCommand stored = new SqlCommand("sp_sap_INStock", conn);
                     stored.CommandType = CommandType.StoredProcedure;
                     stored.ExecuteNonQuery();
 
